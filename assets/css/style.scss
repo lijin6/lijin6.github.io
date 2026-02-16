@@ -1,0 +1,12 @@
+---
+---
+@import "{{ site.theme }}";
+
+// 自定义绿色调（例如：森林绿）
+.page-header {
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957);
+}
+.main-content h1, .main-content h2, .main-content h3 {
+  color: #1e7e34;
+}
