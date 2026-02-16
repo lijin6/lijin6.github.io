@@ -1,0 +1,7 @@
+main:
+  - title: "关于我"
+    url: /about/
+  - title: "项目经历"
+    url: /#projects
+  - title: "研究技术"
+    url: /#tech

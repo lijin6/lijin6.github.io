@@ -1,12 +1,86 @@
 ---
 ---
+// 定义 React 科技浅蓝变量
+$react-blue: #61dafb;
+$deep-blue: #282c34;
+$soft-blue: rgba(97, 218, 251, 0.1);
+
 @import "{{ site.theme }}";
 
-// 自定义绿色调（例如：森林绿）
+// 1. Header 修改为 React 风格的深邃蓝到浅蓝渐变
 .page-header {
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957);
+  background-color: $deep-blue;
+  background-image: linear-gradient(135deg, $deep-blue 0%, #20232a 100%);
+  padding: 5rem 6rem;
+  border-bottom: 4px solid $react-blue;
 }
-.main-content h1, .main-content h2, .main-content h3 {
-  color: #1e7e34;
+
+.project-tagline { color: $react-blue !important; opacity: 0.9; }
+
+// 2. 玻璃拟态导航栏 (React 浅蓝风格)
+.glass-nav {
+  position: sticky;
+  top: 15px;
+  z-index: 1000;
+  margin: 0 auto 30px;
+  width: fit-content;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(97, 218, 251, 0.3);
+  border-radius: 50px;
+  padding: 10px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex; gap: 25px;
+
+  a {
+    color: #20232a !important;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    &:hover { color: $react-blue !important; }
+  }
 }
+
+// 3. 通用卡片与布局
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin: 25px 0 60px;
+}
+
+.tech-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e1e4e8;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  display: flex; flex-direction: column;
+  border-top: 5px solid $react-blue;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(97, 218, 251, 0.2);
+    border-color: $react-blue;
+  }
+
+  h3, h4 { color: #20232a; margin-top: 0; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.6; }
+  
+  .tag {
+    background: $soft-blue;
+    color: #007acc;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 6px;
+  }
+}
+
+// 工作对标卡片特殊样式
+.oppo-card { border-top-color: #ff6600; background: #fffaf5; } // 稍微区分一下对标内容
+
+  

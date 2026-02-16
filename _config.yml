@@ -1,36 +1,14 @@
-
-
 title: lijin6 AI Tech Space
-email: lijin6.ac@gmial.com
-description: >- # this means to ignore newlines until "baseurl:"
-  AI应用系统设计与开发专家 | 专注于LLM集成、RAG优化及AI Agent落地。
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+email: lijin6.ac@gmail.com
+description: >- 
+  AI应用系统设计与开发者 | 专注于LLM集成、RAG优化及AI Agent落地。
 
-# Build settings
+# 统一配置导航页面，Jekyll 会自动在 Header 区域生成对应的按钮
+header_pages:
+  - index.md
+  - about.md
+
 remote_theme: pages-themes/cayman
-# theme: minima
 plugins:
   - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - jekyll-seo-tag
