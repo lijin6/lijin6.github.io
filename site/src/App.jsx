@@ -80,6 +80,10 @@ export default function App() {
           <a className="profile-photo" href={github} aria-label={t("Tensorboy 的 GitHub", "Tensorboy on GitHub")}><img src={avatar} alt="" width="88" height="88" /></a>
           <p className="profile-name">Tensorboy</p>
           <p className="affiliation">{t('海南师范大学 · 人工智能方向', 'Hainan Normal University · Artificial Intelligence')}</p>
+          <p className="research-interests">
+            <strong>{t('研究领域', 'Research interests')}</strong>
+            <span>{t('计算机视觉 · 遥感 · 高光谱异常检测', 'Computer vision · Remote sensing · Hyperspectral anomaly detection')}</span>
+          </p>
           <section id="about" className="intro">
             <h1>{t('计算机视觉与应用开发', 'Computer vision & application development')}</h1>
             <p>{t(

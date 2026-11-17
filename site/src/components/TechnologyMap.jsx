@@ -18,6 +18,7 @@ const nodeTitle = (node, language) => Array.isArray(node.title) ? node.title[lan
 export default function TechnologyMap({ english }) {
   const language = Number(english);
   const [selected, setSelected] = useState('cv');
+  const [expanded, setExpanded] = useState(true);
   const [geometry, setGeometry] = useState({ width: 1, height: 1, points: {} });
   const board = useRef(null);
   const node = nodes.find(item => item.id === selected);
@@ -25,6 +26,7 @@ export default function TechnologyMap({ english }) {
 
   useLayoutEffect(() => {
     const container = board.current;
+    if (!expanded || !container) return;
     const elements = [...container.querySelectorAll('[data-graph-point]')];
     function measure() {
       const bounds = container.getBoundingClientRect();
@@ -39,12 +41,18 @@ export default function TechnologyMap({ english }) {
     container.querySelectorAll('.map-group, .graph-node').forEach(element => observer.observe(element));
     measure();
     return () => observer.disconnect();
-  }, [english]);
+  }, [english, expanded]);
 
   return (
     <section id="technology" className="section technology-section" aria-labelledby="technology-title">
-      <h2 id="technology-title" className="icon-label"><Icon name="network" />{english ? 'Learning map' : '学习路线图'}</h2>
-      <div className="technology-card">
+      <div className="section-heading graph-heading">
+        <h2 id="technology-title" className="icon-label"><Icon name="network" />{english ? 'Learning map' : '学习路线图'}</h2>
+        <button type="button" className="icon-label" aria-expanded={expanded} aria-controls="learning-map-content" onClick={() => setExpanded(value => !value)}>
+          <Icon name={expanded ? 'collapse' : 'expand'} />
+          {expanded ? (english ? 'Collapse' : '收起') : (english ? 'Expand' : '展开')}
+        </button>
+      </div>
+      <div className="technology-card" id="learning-map-content" hidden={!expanded}>
         <div className="map-board" ref={board}>
           <svg className="graph-edges" viewBox={`0 0 ${geometry.width} ${geometry.height}`} aria-hidden="true">
             {edges.map(([from, to]) => {

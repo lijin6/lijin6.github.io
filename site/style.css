@@ -154,3 +154,10 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
   .map-group h3 { font-size: .74rem; }
 }
 .profile-email { flex-basis: 100%; overflow-wrap: anywhere; }
+
+.profile-name, .affiliation, .research-interests { text-align: center; }
+.research-interests { margin-top: .65rem; font-size: .8rem; color: var(--muted); }
+.research-interests strong { display: block; color: var(--accent); font-size: .75rem; margin-bottom: .16rem; }
+.research-interests span { display: block; }
+.graph-heading { align-items: center; margin-bottom: .9rem; }
+.graph-heading h2 { margin-bottom: 0; }
