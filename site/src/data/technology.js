@@ -35,6 +35,7 @@ export const tracks = [
       { id: 'multimodal', title: ['多模态', 'Multimodal'], tag: 'CLIP · Vision-language', detail: ['用 CLIP 训练仓库探索图像与文本表征。', 'Exploring image and text representations through CLIP training experiments.'], href: repo('lijin6/Clip_train') },
       { id: 'fashion', title: 'Fashion AI', tag: 'React · FastAPI · TensorFlow', detail: ['把图片上传、模型推理和服饰属性结果串成完整的交互流程。', 'Connects image uploads, model inference, and clothing attribute results.'], href: repo('lijin6/fashion-ai-system') },
       hyperspectral,
+      { id: 'spectral-ui', title: ['高光谱可视化', 'Spectral imaging UI'], tag: 'Python · Qt · spectralUI', detail: ['逐波段查看光谱图像，比较像素光谱，并预览 sRGB 和 3D 立方体。', 'Browse spectral bands, compare pixel spectra, and preview sRGB images and 3D cubes.'], href: repo('lijin6/hyperspectral-images-UI') },
       anomalib,
       { id: 'weed', title: 'WeedDetect', tag: 'Android · CameraX · TensorFlow Lite', detail: ['把 YOLO 杂草识别模型部署到安卓端，支持本地影像分析和实时相机检测。', 'Runs a YOLO weed detection model on Android for local media and live camera input.'], href: repo('lijin6/weeddetectionapp') },
       { id: 'slam', title: 'SLAM', tag: 'Loop closure', detail: ['做过 SLAM 回环优化方向的实践。', 'Past work on loop closure optimization in SLAM.'], href: blog, kind: 'blog' },
@@ -46,5 +47,5 @@ export const connections = [
   ['python', 'pytorch'], ['python', 'hyperspectral'],
   ['react', 'fashion'], ['fastapi', 'fashion'],
   ['tensorflow', 'fashion'], ['pytorch', 'cv'],
-  ['remote', 'hyperspectral'], ['remote', 'land-cover'], ['remote', 'infrared'], ['infrared', 'land-cover'], ['tensorflow', 'weed'], ['cv', 'weed'],
+  ['remote', 'hyperspectral'], ['hyperspectral', 'spectral-ui'], ['remote', 'spectral-ui'], ['remote', 'land-cover'], ['remote', 'infrared'], ['infrared', 'land-cover'], ['tensorflow', 'weed'], ['cv', 'weed'],
 ];

@@ -1,3 +1,4 @@
+import hyperspectralImage from '../../media/hyperspectral-ui.png';
 import weedHome from '../../media/weed-home.jpg';
 import weedInfo from '../../media/weed-info.jpg';
 import architectureImage from '../../media/hires-architecture.png';
@@ -13,6 +14,17 @@ export const github = 'https://github.com/lijin6';
 export const scholar = 'https://scholar.google.com/citations?user=vxZJk_MAAAAJ&hl=en';
 
 export const projects = [
+  {
+    name: ['高光谱图像分析工具', 'Hyperspectral Image Viewer'],
+    repo: 'hyperspectral-images-UI',
+    upstream: 'https://github.com/TomAmpiath/spectralUI',
+    media: { src: hyperspectralImage, alt: ['高光谱工具的波段图、元数据和像素光谱曲线', 'Band image, metadata, and pixel spectra in the hyperspectral viewer'] },
+    stack: 'Python / Qt / Hyperspectral imaging',
+    detail: [
+      '基于 spectralUI 的桌面工具，支持打开 .mat 高光谱数据、逐波段浏览、比较像素光谱曲线，并查看 sRGB 合成图和三维光谱立方体。',
+      'A desktop viewer based on spectralUI. It opens .mat hyperspectral cubes, displays individual bands, compares pixel spectra, and previews sRGB composites and 3D cubes.',
+    ],
+  },
   {
     name: ['Fashion AI 服饰属性分析系统', 'Fashion AI · Clothing Attribute Analysis'],
     repo: 'fashion-ai-system',

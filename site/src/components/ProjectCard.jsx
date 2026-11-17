@@ -26,6 +26,7 @@ export default function ProjectCard({ project, english }) {
         <p>{project.detail[index]}</p>
         <div className="project-links">
           <a className="text-link icon-label" href={repo} aria-label={project.name[index] + ' · GitHub'}><Icon name="github" />GitHub</a>
+          {project.upstream && <a className="text-link icon-label" href={project.upstream}><Icon name="link" />{english ? "Upstream project" : "上游项目"}</a>}
           {project.extra && <a className="text-link icon-label" href={project.extra.src}><Icon name="image" />{project.extra.label[index]}</a>}
           {project.extra?.source && <a className="text-link" href={project.extra.source}>Fig. 14 · CC BY 4.0</a>}
         </div>

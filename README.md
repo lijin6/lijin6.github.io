@@ -38,6 +38,7 @@ The build writes the root `index.html` and static assets under `portfolio/`. Com
 ## 配图 / Image sources
 
 - [Fashion AI](https://github.com/lijin6/fashion-ai-system) 的分析界面与技术面板。
+- [高光谱图像分析工具](https://github.com/lijin6/hyperspectral-images-UI) 的界面截图。上游项目为 [spectralUI](https://github.com/TomAmpiath/spectralUI)。
 - [WeedDetectionApp](https://github.com/lijin6/weeddetectionapp) 的安卓首页和百科截图。
 - [Game Hub](https://github.com/lijin6/game-hub) 的本地截图（示例数据，封面来自 Steam）。
 - 裂缝检测项目使用提供的框架图，并链接到论文 [Figure 14](https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig14/)（CC BY 4.0）。

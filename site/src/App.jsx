@@ -15,7 +15,7 @@ function currentLanguage() {
 export default function App() {
   const [lang, setLang] = useState(currentLanguage);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
-  const [section, setSection] = useState(() => location.hash || '#about');
+  const [section, setSection] = useState(() => location.hash || '#technology');
   const english = lang === 'en';
   const dark = theme === 'dark';
   const t = (zh, en) => english ? en : zh;
@@ -30,16 +30,16 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
-    const syncSection = () => setSection(location.hash || '#about');
+    const syncSection = () => setSection(location.hash || '#technology');
     addEventListener('hashchange', syncSection);
     return () => removeEventListener('hashchange', syncSection);
   }, []);
 
   const navigation = [
-    ['#about', 'person', t('简介', 'About')],
-    ['#projects', 'code', t('项目', 'Projects')],
-    ['#publications', 'paper', t('论文', 'Publications')],
     ['#technology', 'network', t('图谱', 'Map')],
+    ['#publications', 'paper', t('论文', 'Publications')],
+    ['#projects', 'code', t('项目', 'Projects')],
+    ['#about', 'person', t('简介', 'About')],
   ];
 
   function switchLanguage() {
@@ -92,9 +92,18 @@ export default function App() {
             <a className="icon-label" href={github}><Icon name="github" />GitHub</a>
             <a className="icon-label" href={scholar}><Icon name="paper" />Google Scholar</a>
             <a className="icon-label" href={blog}><Icon name="book" />CSDN</a>
+            <a className="icon-label profile-email" href="mailto:lijinliu.ac@gmail.com"><Icon name="mail" />lijinliu.ac@gmail.com</a>
           </div>
         </aside>
         <main id="main">
+          <TechnologyMap english={english} />
+          <section id="publications" className="section">
+            <div className="section-heading">
+              <h2 className="icon-label"><Icon name="paper" />{t('论文与预印本', 'Publications & preprint')}</h2>
+              <a className="text-link" href={scholar}>Google Scholar ↗</a>
+            </div>
+            <div className="papers">{papers.map(paper => <PublicationCard key={paper.doi} paper={paper} english={english} />)}</div>
+          </section>
           <section id="projects" className="section">
             <h2 className="icon-label"><Icon name="code" />{t('代表项目', 'Selected projects')}</h2>
             <div className="projects">{projects.map(project => <ProjectCard key={project.repo} project={project} english={english} />)}</div>
@@ -110,14 +119,6 @@ export default function App() {
                 </article>
               ))}
             </div>
-          </section>
-          <TechnologyMap english={english} />
-          <section id="publications" className="section">
-            <div className="section-heading">
-              <h2 className="icon-label"><Icon name="paper" />{t('论文与预印本', 'Publications & preprint')}</h2>
-              <a className="text-link" href={scholar}>Google Scholar ↗</a>
-            </div>
-            <div className="papers">{papers.map(paper => <PublicationCard key={paper.doi} paper={paper} english={english} />)}</div>
           </section>
         </main>
       </div>

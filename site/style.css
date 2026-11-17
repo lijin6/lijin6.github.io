@@ -98,7 +98,7 @@ footer { padding-block: 16px 26px; border-top: 1px solid var(--line); font-size:
 .icon { flex: none; width: 1em; height: 1em; }
 .icon-label { display: inline-flex; align-items: center; gap: .42em; }
 h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
-.profile-photo { display: inline-block; margin-bottom: .65rem; }
+.profile-photo { display: block; width: fit-content; margin: 0 auto .65rem; }
 .profile-photo img { display: block; width: 88px; height: 88px; object-fit: cover; border: 1px solid var(--line); border-radius: 16px; }
 .intro p, .project-body > p:not(.stack), .map-description { text-align: start; hyphens: auto; }
 
@@ -114,7 +114,6 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 .paper-diagram li { display: grid; }
 .paper-diagram li span { color: var(--accent); line-height: 1; }
 @media (max-width: 740px) {
-  .profile-photo { float: left; margin: .12rem .85rem .5rem 0; }
   .profile-photo img { width: 54px; height: 54px; border-radius: 11px; }
 }
 @media (max-width: 520px) {
@@ -154,3 +153,4 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
   .graph-node { min-height: 48px; font-size: .72rem; }
   .map-group h3 { font-size: .74rem; }
 }
+.profile-email { flex-basis: 100%; overflow-wrap: anywhere; }
