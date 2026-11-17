@@ -1,5 +1,5 @@
 import { build } from 'vite';
-import { rename } from 'node:fs/promises';
+import { readFile, writeFile, unlink } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 const atRoot = (path) => fileURLToPath(new URL('../' + path, import.meta.url));
@@ -8,4 +8,7 @@ await build({
   base: '/portfolio/',
   build: { outDir: atRoot('portfolio'), emptyOutDir: true },
 });
-await rename(atRoot('portfolio/index.html'), atRoot('index.html'));
+const generated = atRoot('portfolio/index.html');
+const html = await readFile(generated, 'utf8');
+await writeFile(atRoot('index.html'), html.replaceAll('\r\n', '\n'));
+await unlink(generated);
