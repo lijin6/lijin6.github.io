@@ -82,17 +82,12 @@ export default function App() {
           <p className="affiliation">{t('海南师范大学 · 人工智能方向', 'Hainan Normal University · Artificial Intelligence')}</p>
           <p className="research-interests">
             <strong>{t('研究领域', 'Research interests')}</strong>
-            <span>{t('计算机视觉 · 遥感 · 高光谱异常检测 · 红外检测', 'Computer vision · Remote sensing · Hyperspectral anomaly detection · Infrared detection')}</span>
-            <span>{t('深度学习 · 表征学习 · 多模态学习与融合', 'Deep learning · Representation learning · Multimodal learning and fusion')}</span>
-            <span>{t('多模型异构协同', 'Heterogeneous multi-model collaboration')}</span>
+            <span>{t('计算机视觉与遥感', 'Computer vision & remote sensing')}</span>
+            <span>{t('表征学习与多模态融合', 'Representation learning & multimodal fusion')}</span>
           </p>
           <section id="about" className="intro">
-            <h1>{t('计算机视觉与应用开发', 'Computer vision & application development')}</h1>
-            <p>{t(
-              '目前聚焦计算机视觉，做过高光谱异常检测、遥感图像分析和 SLAM 回环优化。也用 React、TypeScript 和 FastAPI 开发 AI 应用。',
-              'I focus on computer vision and have worked on hyperspectral anomaly detection, remote sensing, and SLAM loop closure. I also build AI applications with React, TypeScript, and FastAPI.',
-            )}</p>
-            <p className="profile-experience">{t("科研中主要负责实验、代码实现和论文撰写，也有后端开发与技术支持实习经历。", "In research, I run experiments, implement code, and write manuscripts. I have also interned in backend development and technical support.")}</p>
+            <h1>{t('研究与开发', 'Research & development')}</h1>
+            <p>{t('我研究视觉模型，也开发 Web 和移动端 AI 应用。科研中负责实验、代码实现和论文撰写，有后端开发与技术支持实习经历。', 'I study vision models and build AI applications for web and mobile. I run experiments, implement code, and write papers, with internship experience in backend development and technical support.')}</p>
           </section>
           <div className="profile-links">
             <div className="profile-link-row">
