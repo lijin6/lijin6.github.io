@@ -1,10 +1,9 @@
+import architectureImage from '../../media/hires-architecture.png';
 import fashionImage from '../../media/fashion.png';
 import fashionDetails from '../../media/fashion-details.png';
 import gameImage from '../../media/game-hub.png';
 import crackImage from '../../media/cracks.png';
 import spillwayImage from '../../media/cracks-spillway.png';
-import mangroveImage from '../../media/mangrove.jpg';
-import fireImage from '../../media/perry-fire.jpg';
 
 export const github = 'https://github.com/lijin6';
 export const scholar = 'https://scholar.google.com/citations?user=vxZJk_MAAAAJ&hl=en';
@@ -50,19 +49,19 @@ export const projects = [
 
 export const papers = [
   {
-    preview: { image: crackImage, label: ['论文图 13 · 裂缝检测对比', 'Figure 13 · Crack detection comparison'], credit: 'Scientific Reports · Fig. 13 · CC BY 4.0', source: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig13/', license: 'https://creativecommons.org/licenses/by/4.0/' },
+    preview: { image: architectureImage, label: ['HiResDC-YOLO 原始架构图', 'HiResDC-YOLO architecture'], credit: 'Scientific Reports · Fig. 2 · CC BY 4.0', source: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig2/', license: 'https://creativecommons.org/licenses/by/4.0/' },
     year: '2026', venue: 'Scientific Reports', role: ['第一作者', 'First author'],
     title: 'Precision detection of miniature dam cracks with a multi-scale enhanced YOLO framework for UAV inspection',
     doi: '10.1038/s41598-026-52557-w',
   },
   {
-    preview: { image: mangroveImage, label: ['东寨港红树林 · 主题配图', 'Dongzhai Harbour mangroves · Context image'], credit: 'Philg88 / Wikimedia Commons · CC BY-SA 3.0', source: 'https://commons.wikimedia.org/wiki/File:Dongzhai_Harbour_Mangrove_Forest.jpg', license: 'https://creativecommons.org/licenses/by-sa/3.0/' },
+    preview: { label: ['方法流程示意', 'Method overview'], steps: [['卫星影像', 'Satellite imagery'], ['光谱指数', 'Spectral indices'], ['地物分类', 'Land cover classification'], ['变化检测', 'Change detection']] },
     year: '2024', venue: 'ACM EITCE', role: ['第四作者', 'Fourth author'],
     title: 'Research on the Detection Methods for Changes in the Mangroves of Dongzhaigang, Hainan from 2019 to 2023',
     doi: '10.1145/3711129.3711158',
   },
   {
-    preview: { image: fireImage, label: ['佩里山火遥感影像 · 主题配图', 'Perry Fire satellite image · Context image'], credit: 'Joshua Stevens / NASA Earth Observatory · USGS Landsat data', source: 'https://science.nasa.gov/earth/earth-observatory/the-perry-fire-by-day-and-night-92514/' },
+    preview: { label: ['模型流程示意', 'Model overview'], steps: [['无人机影像', 'UAV imagery'], ['YOLOv8', 'YOLOv8'], ['MSA / DE', 'MSA / DE'], ['火情检测', 'Fire detection']] },
     year: '2025', venue: 'SSRN', role: ['第二作者 · 预印本', 'Second author · Preprint'],
     title: 'Small-Scale Fire Detection for Drone-Based Remote Sensing Applications Using an Enhanced Deep Learning Framework',
     doi: '10.2139/ssrn.5804452',

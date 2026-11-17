@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import avatar from '../media/github-avatar.png';
+import Icon from './components/Icon';
+import TechnologyMap from './components/TechnologyMap';
 import ProjectCard from './components/ProjectCard';
 import PublicationCard from './components/PublicationCard';
 import { github, scholar, projects, papers } from './data/portfolio';
@@ -45,25 +48,26 @@ export default function App() {
           <a className="brand" href={english ? '/?lang=en' : '/'}>Tensorboy</a>
           <nav aria-label={t('页面导航', 'Page navigation')}>
             <a href="#about">{t('简介', 'About')}</a>
-            <a href="#projects">{t('项目', 'Projects')}</a>
-            <a href="#publications">{t('论文', 'Publications')}</a>
+            <a className="icon-label" href="#projects"><Icon name="code" />{t('项目', 'Projects')}</a>
+            <a className="icon-label" href="#technology"><Icon name="network" />{t("图谱", "Map")}</a>
+            <a className="icon-label" href="#publications"><Icon name="paper" />{t('论文', 'Publications')}</a>
           </nav>
           <div className="controls">
-            <button type="button" onClick={switchLanguage} lang={english ? 'zh-CN' : 'en'}>{t('English', '中文')}</button>
-            <button type="button" onClick={switchTheme}>{dark ? t('浅色', 'Light') : t('深色', 'Dark')}</button>
+            <button type="button" className="icon-label" onClick={switchLanguage} lang={english ? 'zh-CN' : 'en'}><Icon name="globe" />{t('English', '中文')}</button>
+            <button type="button" className="icon-label" onClick={switchTheme}><Icon name={dark ? "sun" : "moon"} />{dark ? t('浅色', 'Light') : t('深色', 'Dark')}</button>
           </div>
         </div>
       </header>
       <div className="shell layout">
         <aside className="profile" aria-label={t('个人资料', 'Profile')}>
-          <div className="monogram" aria-hidden="true">T</div>
+          <a className="profile-photo" href={github} aria-label={t("Tensorboy 的 GitHub", "Tensorboy on GitHub")}><img src={avatar} alt="" width="88" height="88" /></a>
           <p className="profile-name">Tensorboy</p>
           <p className="affiliation">{t('海南师范大学 · 人工智能方向', 'Hainan Normal University · Artificial Intelligence')}</p>
           <section id="about" className="intro">
             <h1>{t('前端开发与 AI 应用', 'Frontend development & applied AI')}</h1>
             <p>{t(
-              '我用 React 和 TypeScript 开发 Web 界面，也用 Python 和 FastAPI 把视觉模型接入应用。科研项目主要关注高分辨率图像检测和遥感视觉，我负责实验、代码实现和论文撰写。',
-              'I build web interfaces with React and TypeScript and connect computer vision models to applications with Python and FastAPI. My research focuses on high-resolution detection and remote sensing, where I run experiments, implement code, and write manuscripts.',
+              '我用 React 和 TypeScript 开发 Web 界面，也用 Python 和 FastAPI 把视觉模型接入应用。我有后端开发和技术支持实习经历。科研项目主要关注高分辨率图像检测和遥感视觉，我负责实验、代码实现和论文撰写。',
+              'I build web interfaces with React and TypeScript and connect computer vision models to applications with Python and FastAPI. I have interned in backend development and technical support. My research focuses on high-resolution detection and remote sensing, where I run experiments, implement code, and write manuscripts.',
             )}</p>
           </section>
           <div className="profile-links">
@@ -73,12 +77,13 @@ export default function App() {
         </aside>
         <main id="main">
           <section id="projects" className="section">
-            <h2>{t('代表项目', 'Selected projects')}</h2>
+            <h2 className="icon-label"><Icon name="code" />{t('代表项目', 'Selected projects')}</h2>
             <div className="projects">{projects.map(project => <ProjectCard key={project.repo} project={project} english={english} />)}</div>
           </section>
+          <TechnologyMap english={english} />
           <section id="publications" className="section">
             <div className="section-heading">
-              <h2>{t('论文与预印本', 'Publications & preprint')}</h2>
+              <h2 className="icon-label"><Icon name="paper" />{t('论文与预印本', 'Publications & preprint')}</h2>
               <a className="text-link" href={scholar}>Google Scholar ↗</a>
             </div>
             <div className="papers">{papers.map(paper => <PublicationCard key={paper.doi} paper={paper} english={english} />)}</div>
