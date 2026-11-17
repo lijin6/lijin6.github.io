@@ -19,7 +19,7 @@
   --wash: #2b1d3c;
 }
 * { box-sizing: border-box; }
-html { scroll-padding-top: 5rem; }
+html { scroll-padding-top: var(--header-offset, 5rem); }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 Inter, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", system-ui, sans-serif; }
 a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: .24em; }
@@ -70,7 +70,7 @@ h3 { font-size: 1.03rem; line-height: 1.45; letter-spacing: -.015em; }
 .footer-links a { color: var(--muted); }
 .footer-links .footer-top { color: var(--accent); font-weight: 650; }
 @media (max-width: 740px) {
-  html { scroll-padding-top: 7rem; }
+  html { scroll-padding-top: var(--header-offset, 7rem); }
   .shell { width: calc(100% - 36px); }
   .navigation { flex-wrap: wrap; gap: .65rem; padding-block: .7rem; }
   .section-nav { order: 3; width: 100%; flex-wrap: wrap; }

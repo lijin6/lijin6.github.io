@@ -7,7 +7,7 @@ export default function PublicationCard({ paper, english }) {
   return (
     <article className="paper">
       <a className="paper-preview" href={preview.image} aria-label={preview.label[index]}>
-        <img src={preview.image} alt={preview.label[index]} loading="lazy" />
+        <img src={preview.thumbnail ?? preview.image} alt={preview.label[index]} loading="lazy" />
       </a>
       <div>
         <p className="paper-meta">{paper.role[index]} · {paper.venue} · {paper.year}</p>

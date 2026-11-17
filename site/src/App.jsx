@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import brandMark from '../../assets/favicon.svg';
 import avatar from '../media/github-avatar.png';
 import Icon from './components/Icon';
@@ -16,6 +16,7 @@ export default function App() {
   const [lang, setLang] = useState(currentLanguage);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
   const [section, setSection] = useState(() => location.hash || '#technology');
+  const header = useRef(null);
   const english = lang === 'en';
   const dark = theme === 'dark';
   const t = (zh, en) => english ? en : zh;
@@ -33,6 +34,25 @@ export default function App() {
     const syncSection = () => setSection(location.hash || '#technology');
     addEventListener('hashchange', syncSection);
     return () => removeEventListener('hashchange', syncSection);
+  }, []);
+
+  useLayoutEffect(() => {
+    const headerElement = header.current;
+    const root = document.documentElement;
+    const updateOffset = () => {
+      root.style.setProperty('--header-offset', Math.ceil(headerElement.getBoundingClientRect().height + 10) + 'px');
+    };
+    const observer = new ResizeObserver(updateOffset);
+    observer.observe(headerElement);
+    updateOffset();
+
+    // The initial URL may be resolved before React mounts the target section.
+    const targetId = location.hash.slice(1);
+    document.getElementById(targetId)?.scrollIntoView();
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty('--header-offset');
+    };
   }, []);
 
   const navigation = [
@@ -59,7 +79,7 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#main">{t('跳到正文', 'Skip to content')}</a>
-      <header className="top">
+      <header className="top" ref={header}>
         <div className="shell navigation">
           <a className="brand" href={english ? '/' : '/?lang=zh'}><img src={brandMark} alt="" width="29" height="29" />Tensorboy</a>
           <nav className="section-nav" aria-label={t('页面导航', 'Page navigation')}>

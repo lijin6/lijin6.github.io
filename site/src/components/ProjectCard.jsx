@@ -9,9 +9,9 @@ export default function ProjectCard({ project, english }) {
     <article className="project">
       <figure className="project-preview">
         <div className={project.media.companion ? 'project-media paired-media' : 'project-media'}>
-          <a href={project.media.src}><img src={project.media.src} alt={project.media.alt[index]} loading="lazy" /></a>
+          <a href={project.media.src}><img src={project.media.thumbnail ?? project.media.src} alt={project.media.alt[index]} loading="lazy" /></a>
           {project.media.companion && <a href={project.media.companion.src}>
-            <img src={project.media.companion.src} alt={project.media.companion.alt[index]} loading="lazy" />
+            <img src={project.media.companion.thumbnail ?? project.media.companion.src} alt={project.media.companion.alt[index]} loading="lazy" />
           </a>}
         </div>
         {project.media.caption && <figcaption>{project.media.caption[index]}</figcaption>}
