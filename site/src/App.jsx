@@ -59,12 +59,6 @@ export default function App() {
           <div className="monogram" aria-hidden="true">T</div>
           <p className="profile-name">Tensorboy</p>
           <p className="affiliation">{t('海南师范大学 · 人工智能方向', 'Hainan Normal University · Artificial Intelligence')}</p>
-          <div className="profile-links">
-            <a href={github}>GitHub ↗</a>
-            <a href={scholar}>Google Scholar ↗</a>
-          </div>
-        </aside>
-        <main id="main">
           <section id="about" className="intro">
             <h1>{t('前端开发与 AI 应用', 'Frontend development & applied AI')}</h1>
             <p>{t(
@@ -72,6 +66,12 @@ export default function App() {
               'I build web interfaces with React and TypeScript and connect computer vision models to applications with Python and FastAPI. My research focuses on high-resolution detection and remote sensing, where I run experiments, implement code, and write manuscripts.',
             )}</p>
           </section>
+          <div className="profile-links">
+            <a href={github}>GitHub ↗</a>
+            <a href={scholar}>Google Scholar ↗</a>
+          </div>
+        </aside>
+        <main id="main">
           <section id="projects" className="section">
             <h2>{t('代表项目', 'Selected projects')}</h2>
             <div className="projects">{projects.map(project => <ProjectCard key={project.repo} project={project} english={english} />)}</div>
