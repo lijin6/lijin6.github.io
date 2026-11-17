@@ -39,7 +39,7 @@ export default function TechnologyMap({ english }) {
           <h3>{title(node)}</h3>
           <p className="map-description">{node.detail[language]}</p>
           <a className="text-link icon-label" href={node.href}>
-            {node.paper ? (english ? 'Read paper' : '阅读论文') : (english ? 'View repository' : '查看仓库')} <Icon name="link" />
+            {node.paper ? (english ? 'Read paper' : '阅读论文') : node.blog ? (english ? 'Technical blog' : '技术博客') : (english ? 'View repository' : '查看仓库')} <Icon name="link" />
           </a>
         </div>
       </div>

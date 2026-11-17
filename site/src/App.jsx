@@ -5,6 +5,7 @@ import TechnologyMap from './components/TechnologyMap';
 import ProjectCard from './components/ProjectCard';
 import PublicationCard from './components/PublicationCard';
 import { github, scholar, projects, papers } from './data/portfolio';
+import { blog } from './data/technology';
 
 function currentLanguage() {
   return new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'zh';
@@ -81,13 +82,14 @@ export default function App() {
           <section id="about" className="intro">
             <h1>{t('前端开发与 AI 应用', 'Frontend development & applied AI')}</h1>
             <p>{t(
-              '我用 React 和 TypeScript 开发 Web 界面，也用 Python 和 FastAPI 把视觉模型接入应用。我有后端开发和技术支持实习经历。科研项目主要关注高分辨率图像检测和遥感视觉，我负责实验、代码实现和论文撰写。',
-              'I build web interfaces with React and TypeScript and connect computer vision models to applications with Python and FastAPI. I have interned in backend development and technical support. My research focuses on high-resolution detection and remote sensing, where I run experiments, implement code, and write manuscripts.',
+              '我用 React 和 TypeScript 开发 Web 界面，也用 Python 和 FastAPI 把视觉模型接入应用。我有后端开发和技术支持实习经历。目前聚焦计算机视觉，做过遥感图像分析和 SLAM 回环优化。科研项目中主要负责实验、代码实现和论文撰写。',
+              'I build web interfaces with React and TypeScript and connect computer vision models to applications with Python and FastAPI. I have interned in backend development and technical support. My current focus is computer vision. I have worked on remote sensing imagery and SLAM loop closure optimization. In research projects, I run experiments, implement code, and write manuscripts.',
             )}</p>
           </section>
           <div className="profile-links">
             <a href={github}>GitHub ↗</a>
             <a href={scholar}>Google Scholar ↗</a>
+            <a href={blog}>CSDN ↗</a>
           </div>
         </aside>
         <main id="main">

@@ -1,6 +1,8 @@
 const repo = (name) => 'https://github.com/' + name;
 const doi = (id) => 'https://doi.org/' + id;
 
+export const blog = 'https://blog.csdn.net/weixin_70043030';
+
 export const tracks = [
   {
     id: 'frontend', icon: 'code', name: ['前端工程', 'Frontend'],
@@ -32,9 +34,15 @@ export const tracks = [
     ],
   },
   {
+    id: 'slam', icon: 'scan', name: ['SLAM', 'SLAM'],
+    nodes: [
+      { title: ['回环优化', 'Loop closure optimization'], tag: 'SLAM', blog: true, detail: ['做过 SLAM 回环优化方向的实践。', 'Past work on loop closure optimization in SLAM.'], href: blog },
+    ],
+  },
+  {
     id: 'evaluation', icon: 'scan', name: ['实验与评估', 'Experimentation'],
     nodes: [
-      { title: 'SpecAnomalyEval', tag: 'Python · Hyperspectral', detail: ['在统一数据和指标下对比多种高光谱异常检测器，输出检测图与指标 CSV。', 'Compares hyperspectral anomaly detectors using shared data and metrics, with visual outputs and CSV reports.'], href: repo('lijin6/SpecAnomalyEval') },
+      { title: 'SpecAnomalyEval', tag: 'Python · Hyperspectral', detail: ['2025 年底至 2026 年初做高光谱异常检测。在统一数据和指标下对比多种检测器，输出检测图和指标 CSV。', 'In late 2025 and early 2026, compared hyperspectral anomaly detectors on shared datasets and metrics, with visual outputs and CSV reports.'], href: repo('lijin6/SpecAnomalyEval') },
       { title: 'anomlib_custom', tag: 'Python · Anomalib', detail: ['基于 Anomalib 的异常检测工具仓库。', 'An anomaly-detection tooling repository built on Anomalib.'], href: repo('lijin662/anomlib_custom') },
     ],
   },
