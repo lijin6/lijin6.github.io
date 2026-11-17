@@ -21,9 +21,9 @@ export default function ProjectCard({ project, english }) {
         </figcaption>}
       </figure>
       <div className="project-body">
-        <p className="stack">{project.stack}</p>
         <h3><a href={repo}>{project.name[index]}</a></h3>
         <p>{project.detail[index]}</p>
+        <p className="stack">{project.stack}</p>
         <div className="project-links">
           <a className="text-link icon-label" href={repo} aria-label={project.name[index] + ' · GitHub'}><Icon name="github" />GitHub</a>
           {project.upstream && <a className="text-link icon-label" href={project.upstream}><Icon name="link" />{english ? "Upstream project" : "上游项目"}</a>}

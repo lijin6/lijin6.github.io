@@ -23,6 +23,11 @@ export default function TechnologyMap({ english }) {
   const board = useRef(null);
   const node = nodes.find(item => item.id === selected);
   const selectedTrack = tracks.find(track => track.nodes.includes(node));
+  const neighbors = new Set(connections.flatMap(([from, to]) => {
+    if (from === selected) return [to];
+    if (to === selected) return [from];
+    return [];
+  }));
 
   useLayoutEffect(() => {
     const container = board.current;
@@ -52,7 +57,21 @@ export default function TechnologyMap({ english }) {
           {expanded ? (english ? 'Collapse' : '收起') : (english ? 'Expand' : '展开')}
         </button>
       </div>
+      <p className="graph-summary">{english ? 'I research computer vision and deploy models to the web and mobile devices.' : '我研究计算机视觉，并将模型部署到 Web 和移动端。'}</p>
       <div className="technology-card" id="learning-map-content" hidden={!expanded}>
+        <div className="map-detail" aria-live="polite">
+          <p className="stack">{node.tag}</p>
+          <h3>{nodeTitle(node, language)}</h3>
+          <p className="map-description">{node.detail[language]}</p>
+          <div className="map-detail-links">
+          {node.href && <a className="text-link icon-label" href={node.href}>
+            {linkLabel(node.kind, english)} <Icon name="link" />
+          </a>}
+          {node.code && <a className="text-link icon-label" href={node.code}>
+            <Icon name="github" />{english ? 'View code' : '查看项目代码'}
+          </a>}
+          </div>
+        </div>
         <div className="map-board" ref={board}>
           <svg className="graph-edges" viewBox={`0 0 ${geometry.width} ${geometry.height}`} aria-hidden="true">
             {edges.map(([from, to]) => {
@@ -74,12 +93,12 @@ export default function TechnologyMap({ english }) {
           <div className="map-root"><span className="root-dot" data-graph-point="root" />Tensorboy</div>
           <div className="map-groups">
             {tracks.map(track => (
-              <section className="map-group" key={track.id} aria-labelledby={`map-${track.id}`}>
+              <section className="map-group" data-active={track.id === selectedTrack.id} key={track.id} aria-labelledby={`map-${track.id}`}>
                 <h3 id={`map-${track.id}`}><span className="root-dot" data-graph-point={track.id} />{track.name[language]}</h3>
                 <ul className="map-nodes">
                   {track.nodes.map(item => (
                     <li key={item.id}>
-                      <button className="graph-node" type="button" aria-pressed={selected === item.id} onClick={() => setSelected(item.id)}>
+                      <button className="graph-node" data-related={neighbors.has(item.id)} type="button" aria-pressed={selected === item.id} onClick={() => setSelected(item.id)}>
                         <span className="node-dot" data-graph-point={item.id} />
                         <span className="node-label">{nodeTitle(item, language)}</span>
                       </button>
@@ -93,14 +112,6 @@ export default function TechnologyMap({ english }) {
         <div className="graph-legend">
           <span><i aria-hidden="true" />{english ? 'Area' : '所属方向'}</span>
           <span><i className="legend-related" aria-hidden="true" />{english ? 'Technology link' : '技术关联'}</span>
-        </div>
-        <div className="map-detail" aria-live="polite">
-          <p className="stack">{node.tag}</p>
-          <h3>{nodeTitle(node, language)}</h3>
-          <p className="map-description">{node.detail[language]}</p>
-          {node.href && <a className="text-link icon-label" href={node.href}>
-            {linkLabel(node.kind, english)} <Icon name="link" />
-          </a>}
         </div>
       </div>
     </section>
