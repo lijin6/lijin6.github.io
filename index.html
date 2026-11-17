@@ -13,8 +13,8 @@ permalink: /
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}catch{}</script>
 <style>
-:root{color-scheme:light;--bg:#fff;--ink:#181818;--muted:#535353;--border:#d9d9d9;--surface:#f3f3f3}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#141414;--ink:#f1f1f1;--muted:#b4b4b4;--border:#414141;--surface:#252525}
+:root{color-scheme:light;--bg:#fff;--ink:#181818;--muted:#535353;--border:#d9d9d9;--surface:#f3f3f3;--panel:#fafafa}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#141414;--ink:#f1f1f1;--muted:#b4b4b4;--border:#414141;--surface:#252525;--panel:#1b1b1b}
 *{box-sizing:border-box} [hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Inter","Microsoft YaHei",system-ui,sans-serif}
 a{color:inherit;text-underline-offset:.22em} a:hover{text-decoration-thickness:2px}
@@ -27,9 +27,9 @@ nav,.switches,.social{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 nav a{text-decoration:none}
 button{background:var(--surface);color:var(--ink);border:1px solid var(--border);border-radius:5px;font:inherit;font-size:14px;cursor:pointer;padding:4px 10px}
 .switches{gap:8px}
-.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:66px;padding-block:68px 44px}
-.profile{align-self:start;position:sticky;top:30px}
-.avatar{width:84px;height:84px;object-fit:cover;border-radius:50%;display:block;margin-bottom:16px}
+.layout{display:grid;grid-template-columns:224px minmax(0,1fr);gap:56px;padding-block:54px 48px}
+.profile{align-self:start;position:sticky;top:30px;padding:22px 18px;background:var(--panel);border:1px solid var(--border);border-radius:12px}
+.avatar{width:108px;height:108px;object-fit:cover;border-radius:12px;display:block;margin-bottom:18px}
 h1{font-size:32px;line-height:1.18;margin:0 0 8px;letter-spacing:-.035em}
 .identity{margin:0 0 6px;color:var(--muted)}
 .social{gap:12px;font-size:14px;margin-top:22px}
@@ -38,9 +38,13 @@ h2{font-size:26px;margin:0 0 13px;line-height:1.25}
 h3{line-height:1.4;font-size:17px;margin:0 0 5px}
 p{margin:0 0 10px}
 .entry{border-top:1px solid var(--border);padding:17px 0 13px}
+#publications .entry{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:14px;padding-block:16px}
+#publications .entry h3,#publications .entry .meta{grid-column:2}
+.paper-year{grid-column:1;grid-row:1 / span 2;align-self:start;font-size:12px;line-height:1.7;text-align:center;color:var(--muted);background:var(--surface);border-radius:4px;padding:2px 0;font-variant-numeric:tabular-nums}
+#publications .entry h3{font-size:16px}
 .meta{color:var(--muted);font-size:14px;margin:0 0 6px}
 footer{padding-block:18px 32px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
-@media(max-width:740px){.bar,.layout,footer{width:calc(100% - 36px)}.bar{gap:10px 14px}.bar nav{order:3;width:100%;padding-bottom:4px}.layout{grid-template-columns:1fr;gap:30px;padding-block:28px}.profile{position:static}.avatar{width:64px;height:64px}}
+@media(max-width:740px){.bar,.layout,footer{width:calc(100% - 36px)}.bar{gap:10px 14px}.bar nav{order:3;width:100%;padding-bottom:4px}.layout{grid-template-columns:1fr;gap:30px;padding-block:28px}.profile{position:static;padding:16px}.avatar{width:72px;height:72px}}
 </style>
 </head>
 <body>
@@ -67,9 +71,9 @@ footer{padding-block:18px 32px;border-top:1px solid var(--border);color:var(--mu
 <article class="entry"><h3><a href="https://github.com/lijin6/HiResInfer-YOLO"><span lang="zh-CN" data-lang="zh">HiResInfer-YOLO 高分辨率裂缝检测</span><span lang="en" data-lang="en" hidden>HiResInfer-YOLO · High-resolution Crack Detection</span></a></h3><p class="meta">PyTorch / YOLOv12 / ONNX</p><p><span lang="zh-CN" data-lang="zh">针对无人机巡检图像中的细小裂缝开展实验，负责模型代码实现和论文撰写，并完成 ONNX 导出与推理部署。</span><span lang="en" data-lang="en" hidden>Ran experiments on detecting fine cracks in UAV imagery, implemented model code, contributed to manuscript writing, and exported the model to ONNX for inference deployment.</span></p></article>
 </section>
 <section id="publications"><h2><span lang="zh-CN" data-lang="zh">论文与预印本</span><span lang="en" data-lang="en" hidden>Publications and Preprint</span></h2>
-<article class="entry"><h3><a href="https://doi.org/10.1038/s41598-026-52557-w" lang="en">Precision detection of miniature dam cracks with a multi-scale enhanced YOLO framework for UAV inspection</a></h3><p class="meta">Scientific Reports · 2026 · <span lang="zh-CN" data-lang="zh">第一作者</span><span lang="en" data-lang="en" hidden>First author</span></p></article>
-<article class="entry"><h3><a href="https://doi.org/10.1145/3711129.3711158" lang="en">Research on the Detection Methods for Changes in the Mangroves of Dongzhaigang, Hainan from 2019 to 2023</a></h3><p class="meta">EITCE proceedings (ACM) · 2024 · <span lang="zh-CN" data-lang="zh">第四作者</span><span lang="en" data-lang="en" hidden>Fourth author</span></p></article>
-<article class="entry"><h3><a href="https://doi.org/10.2139/ssrn.5804452" lang="en">Small-Scale Fire Detection for Drone-Based Remote Sensing Applications Using an Enhanced Deep Learning Framework</a></h3><p class="meta">SSRN · 2025 · <span lang="zh-CN" data-lang="zh">第二作者 · 预印本</span><span lang="en" data-lang="en" hidden>Second author · Preprint</span></p></article>
+<article class="entry"><span class="paper-year" aria-hidden="true">2026</span><h3><a href="https://doi.org/10.1038/s41598-026-52557-w" lang="en">Precision detection of miniature dam cracks with a multi-scale enhanced YOLO framework for UAV inspection</a></h3><p class="meta">Scientific Reports · 2026 · <span lang="zh-CN" data-lang="zh">第一作者</span><span lang="en" data-lang="en" hidden>First author</span></p></article>
+<article class="entry"><span class="paper-year" aria-hidden="true">2024</span><h3><a href="https://doi.org/10.1145/3711129.3711158" lang="en">Research on the Detection Methods for Changes in the Mangroves of Dongzhaigang, Hainan from 2019 to 2023</a></h3><p class="meta">EITCE proceedings (ACM) · 2024 · <span lang="zh-CN" data-lang="zh">第四作者</span><span lang="en" data-lang="en" hidden>Fourth author</span></p></article>
+<article class="entry"><span class="paper-year" aria-hidden="true">2025</span><h3><a href="https://doi.org/10.2139/ssrn.5804452" lang="en">Small-Scale Fire Detection for Drone-Based Remote Sensing Applications Using an Enhanced Deep Learning Framework</a></h3><p class="meta">SSRN · 2025 · <span lang="zh-CN" data-lang="zh">第二作者 · 预印本</span><span lang="en" data-lang="en" hidden>Second author · Preprint</span></p></article>
 </section>
 </main></div>
 <footer>© Li-Jin Liu</footer>
