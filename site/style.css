@@ -37,12 +37,12 @@ button { cursor: pointer; color: var(--accent); background: var(--wash); border:
 .section-nav a:hover, .section-nav a[aria-current="location"] { color: var(--accent); background: var(--wash); text-decoration: none; }
 .controls { gap: .5rem; padding-inline-start: .85rem; border-inline-start: 1px solid var(--line); }
 .layout { display: grid; grid-template-columns: 266px minmax(0, 1fr); gap: clamp(26px, 4vw, 54px); padding-block: 48px 52px; }
-.profile { align-self: start; position: sticky; top: 25px; padding: 20px 0 0; border-top: 3px solid var(--accent); }
+.profile { text-align: center; align-self: start; position: sticky; top: 25px; padding: 20px 0 0; border-top: 3px solid var(--accent); }
 p, h1, h2, h3 { margin: 0; }
 .profile-name { font-size: 1.55rem; font-weight: 780; letter-spacing: -.035em; }
 .alternate, .affiliation { color: var(--muted); font-size: .88rem; }
 .affiliation { margin-top: .6rem; }
-.profile-links { display: flex; flex-wrap: wrap; gap: .45rem .9rem; margin-top: 1rem; font-size: .84rem; color: var(--accent); font-weight: 650; }
+.profile-links { display: grid; gap: .45rem; margin-top: 1rem; font-size: .84rem; color: var(--accent); font-weight: 650; }
 .intro { margin-top: 1.1rem; padding-top: .9rem; border-top: 1px solid var(--line); }
 .intro h1 { font-size: 1.08rem; line-height: 1.35; font-weight: 750; letter-spacing: -.025em; margin-bottom: .45rem; }
 .intro p { color: var(--muted); font-size: .87rem; line-height: 1.65; }
@@ -100,7 +100,7 @@ footer { padding-block: 16px 26px; border-top: 1px solid var(--line); font-size:
 h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 .profile-photo { display: block; width: fit-content; margin: 0 auto .65rem; }
 .profile-photo img { display: block; width: 88px; height: 88px; object-fit: cover; border: 1px solid var(--line); border-radius: 16px; }
-.intro p, .project-body > p:not(.stack), .map-description { text-align: start; hyphens: auto; }
+.project-body > p:not(.stack), .map-description { text-align: start; hyphens: auto; }
 
 .technology-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .graph-legend { display: flex; gap: 1rem; padding: 0 1rem .75rem; font-size: .72rem; color: var(--muted); }
@@ -153,7 +153,8 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
   .graph-node { min-height: 48px; font-size: .72rem; }
   .map-group h3 { font-size: .74rem; }
 }
-.profile-email { flex-basis: 100%; overflow-wrap: anywhere; }
+.profile-link-row { display: flex; justify-content: center; align-items: center; gap: .6rem; }
+.profile-email { font-size: .8rem; overflow-wrap: anywhere; }
 
 .profile-name, .affiliation, .research-interests { text-align: center; }
 .research-interests { margin-top: .65rem; font-size: .8rem; color: var(--muted); }

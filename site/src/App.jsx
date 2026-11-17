@@ -93,10 +93,14 @@ export default function App() {
             <p className="profile-experience">{t("科研中主要负责实验、代码实现和论文撰写，也有后端开发与技术支持实习经历。", "In research, I run experiments, implement code, and write manuscripts. I have also interned in backend development and technical support.")}</p>
           </section>
           <div className="profile-links">
-            <a className="icon-label" href={github}><Icon name="github" />GitHub</a>
-            <a className="icon-label" href={scholar}><Icon name="paper" />Google Scholar</a>
-            <a className="icon-label" href={blog}><Icon name="book" />CSDN</a>
-            <a className="icon-label profile-email" href="mailto:lijinliu.ac@gmail.com"><Icon name="mail" />lijinliu.ac@gmail.com</a>
+            <div className="profile-link-row">
+              <a className="icon-label" href={github}><Icon name="github" />GitHub</a>
+              <a className="icon-label" href={scholar}><Icon name="paper" />Google Scholar</a>
+            </div>
+            <div className="profile-link-row">
+              <a className="icon-label profile-email" href="mailto:lijinliu.ac@gmail.com"><Icon name="mail" />lijinliu.ac@gmail.com</a>
+              <a className="icon-label" href={blog}><Icon name="book" />CSDN</a>
+            </div>
           </div>
         </aside>
         <main id="main">

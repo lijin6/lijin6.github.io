@@ -20,6 +20,10 @@ export const tracks = [
       { id: 'rust', title: 'Rust', tag: 'Rust', detail: ['语言学习方向，关注所有权和类型系统。', 'A language learning track focused on ownership and the type system.'] },
       { id: 'react', title: 'React / TS', tag: 'React · TypeScript · Vite', detail: ['用 Game Hub 练习搜索、筛选、排序和响应式组件。', 'Built Game Hub to practice search, filtering, sorting, and responsive components.'], href: repo('lijin6/game-hub') },
       { id: 'fastapi', title: 'FastAPI', tag: 'Python · REST API', detail: ['为 Fashion AI 提供推理接口并与前端联调。', 'Built and integrated the inference API for Fashion AI.'], href: repo('lijin6/fashion-ai-system') },
+      { id: 'cpp', title: 'C++', tag: 'C++', detail: ['C++ 编程基础和代码练习。', 'C++ programming fundamentals and coding practice.'] },
+      { id: 'database', title: ['数据库', 'Databases'], tag: 'SQL · SQLite · SQLAlchemy', detail: ['Fashion AI 用 SQLite 和 SQLAlchemy 管理用户认证数据。', 'Fashion AI uses SQLite and SQLAlchemy for user authentication data.'], href: repo('lijin6/fashion-ai-system') },
+      { id: 'containers', title: ['容器部署', 'Containers'], tag: 'Docker · Kubernetes', detail: ['用 Docker 封装模型推理服务，并用 Kubernetes 调度训练和推理资源。', 'Packaged model inference services with Docker and scheduled training and inference resources with Kubernetes.'] },
+      { id: 'git', title: 'Git', tag: 'Git · GitHub Pages', detail: ['用 Git 管理项目版本，并通过 GitHub Pages 发布作品集。', 'Used Git for version control and GitHub Pages to publish the portfolio.'], href: repo('lijin6/lijin6.github.io') },
       { id: 'linux', title: 'Linux', tag: 'Linux · Docker · Kubernetes', detail: ['整理 Linux、Shell 和容器工具的技术支持与运维实践笔记。', 'Notes on Linux, shell scripting, and container tooling.'], href: repo('lijin6/Linux-Note') },
     ],
   },
@@ -45,7 +49,7 @@ export const tracks = [
 
 export const connections = [
   ['python', 'pytorch'], ['python', 'hyperspectral'],
-  ['react', 'fashion'], ['fastapi', 'fashion'],
+  ['react', 'fashion'], ['fastapi', 'fashion'], ['database', 'fashion'], ['linux', 'containers'],
   ['tensorflow', 'fashion'], ['pytorch', 'cv'],
   ['remote', 'hyperspectral'], ['hyperspectral', 'spectral-ui'], ['remote', 'spectral-ui'], ['remote', 'land-cover'], ['remote', 'infrared'], ['infrared', 'land-cover'], ['tensorflow', 'weed'], ['cv', 'weed'],
 ];
