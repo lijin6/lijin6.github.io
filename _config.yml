@@ -1,12 +1,7 @@
-title: lijin6 AI Tech Space
-email: lijin6.ac@gmail.com
-description: >- 
-  AI应用系统设计与开发者 | 专注于LLM集成、RAG优化及AI Agent落地。
-
-# 统一配置导航页面，Jekyll 会自动在 Header 区域生成对应的按钮
-header_pages:
-  - index.md
-  - about.md
+title: Li-Jin Liu
+email: lijinliu.ac@gmail.com
+description: Frontend development, AI applications, and computer vision research.
+url: https://lijin6.github.io
 
 remote_theme: pages-themes/cayman
 plugins:

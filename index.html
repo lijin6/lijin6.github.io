@@ -1,0 +1,104 @@
+---
+layout: null
+permalink: /
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="刘李金 Li-Jin Liu：前端开发、AI 应用项目与计算机视觉论文。">
+<title>刘李金 · Li-Jin Liu</title>
+<link rel="canonical" href="https://lijin6.github.io/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}catch{}</script>
+<style>
+:root{color-scheme:light;--bg:#fff;--ink:#181818;--muted:#535353;--border:#d9d9d9;--surface:#f3f3f3}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#141414;--ink:#f1f1f1;--muted:#b4b4b4;--border:#414141;--surface:#252525}
+*{box-sizing:border-box} [hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Inter","Microsoft YaHei",system-ui,sans-serif}
+a{color:inherit;text-underline-offset:.22em} a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.top{border-bottom:1px solid var(--border)}
+.bar,.layout,footer{width:min(1080px,calc(100% - 64px));margin:auto}
+.bar{display:flex;align-items:center;gap:20px;min-height:74px;flex-wrap:wrap;padding-block:10px}
+.logo{font-weight:750;text-decoration:none;margin-right:auto}
+nav,.switches,.social{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none}
+button{background:var(--surface);color:var(--ink);border:1px solid var(--border);border-radius:5px;font:inherit;font-size:14px;cursor:pointer;padding:4px 10px}
+.switches{gap:8px}
+.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:66px;padding-block:68px 44px}
+.profile{align-self:start;position:sticky;top:30px}
+.avatar{width:84px;height:84px;object-fit:cover;border-radius:50%;display:block;margin-bottom:16px}
+h1{font-size:32px;line-height:1.18;margin:0 0 8px;letter-spacing:-.035em}
+.identity{margin:0 0 6px;color:var(--muted)}
+.social{gap:12px;font-size:14px;margin-top:22px}
+section+section{margin-top:48px}
+h2{font-size:26px;margin:0 0 13px;line-height:1.25}
+h3{line-height:1.4;font-size:17px;margin:0 0 5px}
+p{margin:0 0 10px}
+.entry{border-top:1px solid var(--border);padding:17px 0 13px}
+.meta{color:var(--muted);font-size:14px;margin:0 0 6px}
+footer{padding-block:18px 32px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+@media(max-width:740px){.bar,.layout,footer{width:calc(100% - 36px)}.bar{gap:10px 14px}.bar nav{order:3;width:100%;padding-bottom:4px}.layout{grid-template-columns:1fr;gap:30px;padding-block:28px}.profile{position:static}.avatar{width:64px;height:64px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="bar">
+<a href="/" class="logo">Li-Jin Liu</a>
+<nav aria-label="Sections"><a href="#about"><span lang="zh-CN" data-lang="zh">简介</span><span lang="en" data-lang="en" hidden>About</span></a><a href="#projects"><span lang="zh-CN" data-lang="zh">项目</span><span lang="en" data-lang="en" hidden>Projects</span></a><a href="#publications"><span lang="zh-CN" data-lang="zh">论文</span><span lang="en" data-lang="en" hidden>Publications</span></a></nav>
+<div class="switches"><button type="button" id="language" aria-label="Switch language">English</button><button type="button" id="theme"><span lang="zh-CN" data-lang="zh">深色</span><span lang="en" data-lang="en" hidden>Dark</span></button></div>
+</div></header>
+<div class="layout">
+<aside class="profile">
+<img class="avatar" src="https://avatars.githubusercontent.com/u/113897036?v=4&amp;s=168" alt="" width="84" height="84">
+<h1><span lang="zh-CN" data-lang="zh">刘李金</span><span lang="en" data-lang="en" hidden>Li-Jin Liu</span></h1>
+<p class="identity"><span lang="zh-CN" data-lang="zh">Li-Jin Liu</span><span lang="en" data-lang="en" hidden>刘李金</span></p>
+<p class="identity"><span lang="zh-CN" data-lang="zh">海南师范大学 · 人工智能方向本科</span><span lang="en" data-lang="en" hidden>Hainan Normal University · Undergraduate studies in AI</span></p>
+<div class="social"><a href="https://github.com/lijin6">GitHub</a><a href="https://scholar.google.com/citations?user=vxZJk_MAAAAJ&amp;hl=en">Scholar</a><a href="mailto:lijinliu.ac@gmail.com"><span lang="zh-CN" data-lang="zh">邮件</span><span lang="en" data-lang="en" hidden>Email</span></a></div>
+</aside>
+<main>
+<section id="about"><h2><span lang="zh-CN" data-lang="zh">关于我</span><span lang="en" data-lang="en" hidden>About</span></h2>
+<p><span lang="zh-CN" data-lang="zh">我用 React 和 TypeScript 开发 Web 界面，也用 Python 和 FastAPI 将视觉模型接入应用。我的科研项目集中在高分辨率图像检测与遥感视觉，主要负责实验、代码实现和论文撰写。</span><span lang="en" data-lang="en" hidden>I build web interfaces with React and TypeScript and integrate computer vision models into applications with Python and FastAPI. My research projects focus on high-resolution detection and remote sensing. I primarily run experiments, implement code, and write manuscripts.</span></p>
+</section>
+<section id="projects"><h2><span lang="zh-CN" data-lang="zh">代表项目</span><span lang="en" data-lang="en" hidden>Selected Projects</span></h2>
+<article class="entry"><h3><a href="https://github.com/lijin6/fashion-ai-system"><span lang="zh-CN" data-lang="zh">Fashion AI 服饰属性分析系统</span><span lang="en" data-lang="en" hidden>Fashion AI · Clothing Attribute Analysis</span></a></h3><p class="meta">React / TypeScript / Tailwind CSS / FastAPI / SQLite</p><p><span lang="zh-CN" data-lang="zh">实现拖拽上传、分析反馈和移动端布局，通过推理接口展示服饰属性，支持登录注册。</span><span lang="en" data-lang="en" hidden>Built drag-and-drop upload, inference feedback and a responsive layout. Connected the interface to an API for clothing attribute predictions and user authentication.</span></p></article>
+<article class="entry"><h3><a href="https://github.com/lijin6/game-hub"><span lang="zh-CN" data-lang="zh">Game Hub 游戏目录</span><span lang="en" data-lang="en" hidden>Game Hub · Game Discovery</span></a></h3><p class="meta">React / TypeScript / Vite / Chakra UI</p><p><span lang="zh-CN" data-lang="zh">实现搜索、类型和平台筛选及排序，统一管理查询状态，并针对不同屏幕组织页面布局。</span><span lang="en" data-lang="en" hidden>Implemented search, genre and platform filters, and sorting with shared query state and a responsive layout.</span></p></article>
+<article class="entry"><h3><a href="https://github.com/lijin6/HiResInfer-YOLO"><span lang="zh-CN" data-lang="zh">HiResInfer-YOLO 高分辨率裂缝检测</span><span lang="en" data-lang="en" hidden>HiResInfer-YOLO · High-resolution Crack Detection</span></a></h3><p class="meta">PyTorch / YOLOv12 / ONNX</p><p><span lang="zh-CN" data-lang="zh">针对无人机巡检图像中的细小裂缝开展实验，负责模型代码实现和论文撰写，并完成 ONNX 导出与推理部署。</span><span lang="en" data-lang="en" hidden>Ran experiments on detecting fine cracks in UAV imagery, implemented model code, contributed to manuscript writing, and exported the model to ONNX for inference deployment.</span></p></article>
+</section>
+<section id="publications"><h2><span lang="zh-CN" data-lang="zh">论文与预印本</span><span lang="en" data-lang="en" hidden>Publications and Preprint</span></h2>
+<article class="entry"><h3><a href="https://doi.org/10.1038/s41598-026-52557-w" lang="en">Precision detection of miniature dam cracks with a multi-scale enhanced YOLO framework for UAV inspection</a></h3><p class="meta">Scientific Reports · 2026 · <span lang="zh-CN" data-lang="zh">第一作者</span><span lang="en" data-lang="en" hidden>First author</span></p></article>
+<article class="entry"><h3><a href="https://doi.org/10.1145/3711129.3711158" lang="en">Research on the Detection Methods for Changes in the Mangroves of Dongzhaigang, Hainan from 2019 to 2023</a></h3><p class="meta">EITCE proceedings (ACM) · 2024 · <span lang="zh-CN" data-lang="zh">第四作者</span><span lang="en" data-lang="en" hidden>Fourth author</span></p></article>
+<article class="entry"><h3><a href="https://doi.org/10.2139/ssrn.5804452" lang="en">Small-Scale Fire Detection for Drone-Based Remote Sensing Applications Using an Enhanced Deep Learning Framework</a></h3><p class="meta">SSRN · 2025 · <span lang="zh-CN" data-lang="zh">第二作者 · 预印本</span><span lang="en" data-lang="en" hidden>Second author · Preprint</span></p></article>
+</section>
+</main></div>
+<footer>© Li-Jin Liu</footer>
+<script>
+const root=document.documentElement;
+const languageButton=document.querySelector("#language");
+const themeButton=document.querySelector("#theme");
+const url=new URL(location.href);
+let lang=url.searchParams.get("lang")==="en"?"en":"zh";
+function render(){
+  root.lang=lang==="en"?"en":"zh-CN";
+  document.querySelectorAll("[data-lang]").forEach(el=>{el.hidden=el.dataset.lang!==lang});
+  languageButton.textContent=lang==="en"?"中文":"English";
+  const dark=root.dataset.theme==="dark";
+  themeButton.textContent=lang==="en"?(dark?"Light":"Dark"):(dark?"浅色":"深色");
+  themeButton.setAttribute("aria-label",lang==="en"?(dark?"Switch to light theme":"Switch to dark theme"):(dark?"切换到浅色主题":"切换到深色主题"));
+}
+languageButton.addEventListener("click",()=>{
+  lang=lang==="en"?"zh":"en";
+  if(lang==="en")url.searchParams.set("lang","en");else url.searchParams.delete("lang");
+  url.hash=location.hash;
+  history.replaceState(null,"",url);
+  render();
+});
+themeButton.addEventListener("click",()=>{
+  root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";
+  try{localStorage.setItem("theme",root.dataset.theme)}catch{}
+  render();
+});
+render();
+</script>
+</body></html>
