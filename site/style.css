@@ -100,8 +100,7 @@ footer { padding-block: 16px 26px; border-top: 1px solid var(--line); font-size:
 h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 .profile-photo { display: inline-block; margin-bottom: .65rem; }
 .profile-photo img { display: block; width: 88px; height: 88px; object-fit: cover; border: 1px solid var(--line); border-radius: 16px; }
-.intro p, .project-body > p:not(.stack), .map-description { text-align: justify; text-align-last: start; hyphens: auto; }
-:lang(zh-CN) { text-justify: inter-character; }
+.intro p, .project-body > p:not(.stack), .map-description { text-align: start; hyphens: auto; }
 
 .technology-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .graph-legend { display: flex; gap: 1rem; padding: 0 1rem .75rem; font-size: .72rem; color: var(--muted); }
@@ -129,7 +128,7 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 .more-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
 .more-project { padding: .85rem; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; min-width: 0; }
 .more-project h3 { overflow-wrap: anywhere; }
-.more-project p:last-child { margin-top: .42rem; color: var(--muted); font-size: .86rem; text-align: justify; text-align-last: start; hyphens: auto; }
+.more-project p:last-child { margin-top: .42rem; color: var(--muted); font-size: .86rem; text-align: start; hyphens: auto; }
 @media (max-width: 620px) {
   .more-projects { grid-template-columns: minmax(0, 1fr); }
 }
