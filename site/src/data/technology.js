@@ -47,3 +47,9 @@ export const tracks = [
     ],
   },
 ];
+
+export const additionalProjects = [
+  tracks.find(track => track.id === 'evaluation').nodes[0],
+  tracks.find(track => track.id === 'evaluation').nodes[1],
+  tracks.find(track => track.id === 'systems').nodes[0],
+];

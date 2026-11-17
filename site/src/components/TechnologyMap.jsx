@@ -10,7 +10,7 @@ export default function TechnologyMap({ english }) {
   const title = (item) => Array.isArray(item.title) ? item.title[language] : item.title;
   return (
     <section id="technology" className="section technology-section" aria-labelledby="technology-title">
-      <h2 id="technology-title" className="icon-label"><Icon name="network" />{english ? 'Technology map' : '技术图谱'}</h2>
+      <h2 id="technology-title" className="icon-label"><Icon name="network" />{english ? 'Learning map' : '学习路线图'}</h2>
       <div className="technology-card">
         <div className="track-controls" role="group" aria-label={english ? 'Technical areas' : '技术方向'}>
           {tracks.map((item, index) => (
@@ -21,13 +21,13 @@ export default function TechnologyMap({ english }) {
           ))}
         </div>
         <div className="map-board">
-          <div className="map-root"><Icon name={track.icon} />{track.name[language]}</div>
+          <div className="map-root"><span className="root-dot" aria-hidden="true" />{track.name[language]}</div>
           <ul className="map-nodes" aria-label={english ? 'Projects and papers' : '项目与论文'}>
             {track.nodes.map((item, index) => (
               <li key={item.href}>
                 <button type="button" aria-pressed={index === nodeIndex}
                   onClick={() => select({ trackIndex, nodeIndex: index })}>
-                  <Icon name={item.paper ? 'paper' : 'code'} />
+                  <span className="node-dot" aria-hidden="true" />
                   <span>{title(item)}</span>
                 </button>
               </li>

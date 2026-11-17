@@ -39,10 +39,10 @@ The build writes the root `index.html` and static assets under `portfolio/`. Com
 
 - [Fashion AI](https://github.com/lijin6/fashion-ai-system) 的分析界面与技术面板。
 - [Game Hub](https://github.com/lijin6/game-hub) 的本地截图（示例数据，封面来自 Steam）。
-- 裂缝检测论文的 [Figure 13](https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig13/) 和 [Figure 14](https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig14/)，[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。
-- 第一篇论文的架构预览使用 [Figure 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig2/)（CC BY 4.0）。红树林和火情条目使用根据论文描述整理的方法示意。
+- 裂缝检测项目使用提供的框架图，并链接到论文 [Figure 14](https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig14/)（CC BY 4.0）。
+- 裂缝论文使用 [Figure 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC13377178/figure/Fig2/)（CC BY 4.0），红树林论文使用提供的东寨港研究区图，火情论文使用 [NASA Earth Observatory](https://science.nasa.gov/earth/earth-observatory/the-perry-fire-by-day-and-night-92514/) 的佩里山火主题配图。
 - 头像来自 [GitHub 个人资料](https://github.com/lijin6)。
 
-## 技术图谱 / Technology map
+## 学习路线图 / Learning map
 
 `site/src/data/technology.js` 定义技术方向及其项目、论文节点。选择节点可以查看说明和原始链接。

@@ -5,7 +5,7 @@ import TechnologyMap from './components/TechnologyMap';
 import ProjectCard from './components/ProjectCard';
 import PublicationCard from './components/PublicationCard';
 import { github, scholar, projects, papers } from './data/portfolio';
-import { blog } from './data/technology';
+import { additionalProjects, blog } from './data/technology';
 
 function currentLanguage() {
   return new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'zh';
@@ -80,11 +80,12 @@ export default function App() {
           <p className="profile-name">Tensorboy</p>
           <p className="affiliation">{t('海南师范大学 · 人工智能方向', 'Hainan Normal University · Artificial Intelligence')}</p>
           <section id="about" className="intro">
-            <h1>{t('前端开发与 AI 应用', 'Frontend development & applied AI')}</h1>
+            <h1>{t('计算机视觉与应用开发', 'Computer vision & application development')}</h1>
             <p>{t(
-              '我用 React 和 TypeScript 开发 Web 界面，也用 Python 和 FastAPI 把视觉模型接入应用。我有后端开发和技术支持实习经历。目前聚焦计算机视觉，做过遥感图像分析和 SLAM 回环优化。科研项目中主要负责实验、代码实现和论文撰写。',
-              'I build web interfaces with React and TypeScript and connect computer vision models to applications with Python and FastAPI. I have interned in backend development and technical support. My current focus is computer vision. I have worked on remote sensing imagery and SLAM loop closure optimization. In research projects, I run experiments, implement code, and write manuscripts.',
+              '目前聚焦计算机视觉，做过高光谱异常检测、遥感图像分析和 SLAM 回环优化。也用 React、TypeScript 和 FastAPI 开发 AI 应用。',
+              'I focus on computer vision and have worked on hyperspectral anomaly detection, remote sensing, and SLAM loop closure. I also build AI applications with React, TypeScript, and FastAPI.',
             )}</p>
+            <p className="profile-experience">{t("科研中主要负责实验、代码实现和论文撰写，也有后端开发与技术支持实习经历。", "In research, I run experiments, implement code, and write manuscripts. I have also interned in backend development and technical support.")}</p>
           </section>
           <div className="profile-links">
             <a href={github}>GitHub ↗</a>
@@ -96,6 +97,18 @@ export default function App() {
           <section id="projects" className="section">
             <h2 className="icon-label"><Icon name="code" />{t('代表项目', 'Selected projects')}</h2>
             <div className="projects">{projects.map(project => <ProjectCard key={project.repo} project={project} english={english} />)}</div>
+            <h3 className="project-subheading">{t('更多项目', 'More projects')}</h3>
+            <div className="more-projects">
+              {additionalProjects.map(project => (
+                <article key={project.href} className="more-project">
+                  <p className="stack">{project.tag}</p>
+                  <h3><a className="icon-label" href={project.href}>
+                    {Array.isArray(project.title) ? project.title[Number(english)] : project.title}<Icon name="link" />
+                  </a></h3>
+                  <p>{project.detail[Number(english)]}</p>
+                </article>
+              ))}
+            </div>
           </section>
           <TechnologyMap english={english} />
           <section id="publications" className="section">
