@@ -62,7 +62,13 @@ h3 { font-size: 1.03rem; line-height: 1.45; letter-spacing: -.015em; }
 .paper-credit { color: var(--muted); font-size: .72rem; line-height: 1.45; margin-top: .4rem; }
 .project-links { display: flex; flex-wrap: wrap; gap: .4rem .8rem; }
 .paper h3 span { color: var(--accent); white-space: nowrap; }
-footer { padding-block: 16px 26px; border-top: 1px solid var(--line); font-size: .84rem; color: var(--muted); }
+.site-footer { border-top: 1px solid var(--line); background: var(--paper); color: var(--muted); font-size: .84rem; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .9rem 1.25rem; padding-block: 18px; }
+.footer-brand, .footer-links { display: flex; align-items: center; gap: .65rem; }
+.footer-brand img { display: block; }
+.footer-links { flex-wrap: wrap; gap: .55rem 1.15rem; }
+.footer-links a { color: var(--muted); }
+.footer-links .footer-top { color: var(--accent); font-weight: 650; }
 @media (max-width: 740px) {
   html { scroll-padding-top: 7rem; }
   .shell { width: calc(100% - 36px); }

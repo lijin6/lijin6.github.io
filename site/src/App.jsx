@@ -127,7 +127,19 @@ export default function App() {
           </section>
         </main>
       </div>
-      <footer className="shell">© Tensorboy</footer>
+      <footer className="site-footer">
+        <div className="shell footer-inner">
+          <div className="footer-brand">
+            <img src={brandMark} alt="" width="28" height="28" />
+            <span>© Tensorboy</span>
+          </div>
+          <div className="footer-links" role="group" aria-label={t('页脚链接', 'Footer links')}>
+            <a className="icon-label" href={github}><Icon name="github" />GitHub</a>
+            <a className="icon-label" href="mailto:lijinliu.ac@gmail.com"><Icon name="mail" />{t('邮箱', 'Email')}</a>
+            <a className="icon-label footer-top" href="#"><Icon name="collapse" />{t('返回顶部', 'Back to top')}</a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
