@@ -102,20 +102,10 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 :lang(zh-CN) { text-justify: inter-character; }
 
 .technology-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-.track-controls { display: flex; flex-wrap: wrap; gap: .45rem; padding: .8rem .85rem; border-bottom: 1px solid var(--line); }
-.track-controls button, .map-nodes button { display: inline-flex; align-items: center; gap: .4rem; }
-.track-controls button { background: var(--paper); color: var(--muted); }
-.track-controls button[aria-pressed="true"], .map-nodes button[aria-pressed="true"] { background: var(--wash); color: var(--accent); border-color: var(--accent); }
-.map-board { --dot: var(--line); display: grid; justify-items: center; padding: 18px 12px; background: radial-gradient(circle, var(--dot) .8px, transparent 1px) 0 0 / 14px 14px; }
-.map-root { display: inline-flex; align-items: center; gap: .45rem; position: relative; border: 1px solid var(--accent); border-radius: 8px; padding: .35rem .7rem; background: var(--paper); color: var(--accent); font-size: .86rem; font-weight: 720; }
-.map-root::after { content: ""; position: absolute; left: 50%; top: 100%; height: 14px; border-left: 1px solid var(--accent); }
-.map-nodes { list-style: none; display: grid; grid-auto-columns: minmax(0, 1fr); grid-auto-flow: column; margin: 14px 0 0; padding: 0; width: min(100%, 590px); }
-.map-nodes li { position: relative; padding: 13px 3px 0; text-align: center; }
-.map-nodes li::before { content: ""; position: absolute; top: 0; left: 0; right: 0; border-top: 1px solid var(--accent); }
-.map-nodes li:first-child::before { left: 50%; }
-.map-nodes li:last-child::before { right: 50%; }
-.map-nodes li::after { content: ""; position: absolute; top: 0; left: 50%; height: 13px; border-left: 1px solid var(--accent); }
-.map-nodes button { position: relative; z-index: 1; justify-content: center; width: 100%; min-height: 43px; padding: .35rem .22rem; color: var(--ink); background: var(--paper); line-height: 1.25; font-size: .77rem; overflow-wrap: anywhere; }
+.graph-legend { display: flex; gap: 1rem; padding: 0 1rem .75rem; font-size: .72rem; color: var(--muted); }
+.graph-legend span { display: inline-flex; align-items: center; gap: .34rem; }
+.graph-legend i { width: 1rem; border-top: 1px solid var(--accent); }
+.graph-legend .legend-related { border-top-style: dashed; }
 .map-detail { padding: .85rem 1rem 1rem; border-top: 1px solid var(--line); }
 .map-description { margin: .3rem 0 .4rem; color: var(--muted); font-size: .9rem; }
 .paper-diagram { padding: 7px; }
@@ -128,19 +118,10 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 }
 @media (max-width: 520px) {
   .section-nav a { padding: .35rem .43rem; font-size: .82rem; }
-  .track-controls { gap: .35rem; }
-  .track-controls button { font-size: .75rem; padding: .32rem .42rem; }
-  .map-nodes button { font-size: .7rem; }
 
   .paper-diagram ol { font-size: .65rem; }
 }
 
-.map-nodes button { flex-direction: column; justify-content: flex-start; gap: .5rem; min-height: 58px; border: 0; background: transparent; padding: 0 .2rem .4rem; }
-.map-nodes button[aria-pressed="true"] { background: transparent; }
-.root-dot, .node-dot { display: block; flex: none; width: .65rem; height: .65rem; border: 1.5px solid var(--accent); border-radius: 50%; background: var(--paper); }
-.root-dot, .map-nodes button[aria-pressed="true"] .node-dot { background: var(--accent); }
-.map-nodes button[aria-pressed="true"] .node-dot { box-shadow: 0 0 0 4px var(--wash); }
-.map-nodes button:hover { color: var(--accent); }
 
 .project-subheading { margin: 1.35rem 0 .72rem; }
 .more-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
@@ -149,4 +130,26 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 .more-project p:last-child { margin-top: .42rem; color: var(--muted); font-size: .86rem; text-align: justify; text-align-last: start; hyphens: auto; }
 @media (max-width: 620px) {
   .more-projects { grid-template-columns: minmax(0, 1fr); }
+}
+
+.map-board { position: relative; isolation: isolate; padding: 19px clamp(8px, 2vw, 23px) 15px; background: radial-gradient(circle, var(--line) .8px, transparent 1px) 0 0 / 14px 14px; }
+.graph-edges { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.graph-edges line, .graph-edges path { fill: none; stroke: var(--accent); stroke-width: 1; opacity: .23; }
+.graph-edges .edge-related { stroke-dasharray: 4 3; opacity: .43; }
+.graph-edges .edge-active { stroke-width: 1.7; opacity: .84; }
+.map-root, .map-group h3 { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .22rem; margin-inline: auto; width: fit-content; padding: .2rem .5rem; background: var(--paper); border-radius: 7px; font-size: .83rem; line-height: 1.25; text-align: center; }
+.map-root { font-size: .95rem; color: var(--accent); font-weight: 770; }
+.map-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(6px, 2vw, 26px); margin-top: .62rem; }
+.map-group h3 { color: var(--accent); }
+.map-nodes { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); list-style: none; margin: .56rem 0 0; padding: 0; gap: .3rem; }
+.graph-node { display: flex; flex-direction: column; align-items: center; width: 100%; min-height: 59px; gap: .24rem; line-height: 1.15; padding: .35rem .1rem; background: transparent; border-color: transparent; color: var(--ink); font-size: .75rem; }
+.node-label { background: var(--paper); padding: .12rem .18rem; border-radius: 4px; overflow-wrap: anywhere; }
+.root-dot, .node-dot { display: block; width: .72rem; height: .72rem; flex: none; border-radius: 50%; border: 1.5px solid var(--accent); background: var(--paper); }
+.root-dot { background: var(--accent); }
+.graph-node[aria-pressed="true"] .node-dot { background: var(--accent); box-shadow: 0 0 0 4px var(--wash); }
+.graph-node[aria-pressed="true"] .node-label, .graph-node:hover .node-label { color: var(--accent); background: var(--wash); }
+@media (max-width: 540px) {
+  .map-nodes { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .18rem; }
+  .graph-node { min-height: 48px; font-size: .72rem; }
+  .map-group h3 { font-size: .74rem; }
 }

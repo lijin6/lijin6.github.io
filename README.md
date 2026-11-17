@@ -3,7 +3,7 @@
 前端开发、AI 应用与计算机视觉作品集。
 Frontend, applied AI, and computer vision portfolio.
 
-[中文主页](https://lijin6.github.io/) · [English homepage](https://lijin6.github.io/?lang=en)
+[English homepage](https://lijin6.github.io/) · [中文主页](https://lijin6.github.io/?lang=zh)
 
 ## 本地开发 / Local development
 
@@ -15,8 +15,8 @@ npm ci
 npm run dev
 ~~~
 
-通过 Vite 输出的地址打开本地预览。英文版可用 `?lang=en` 直达，浅色主题使用蓝色，深色主题使用紫色。
-Open the URL printed by Vite. Add `?lang=en` to open English directly. The light theme uses blue accents and the dark theme uses purple.
+通过 Vite 输出的地址打开本地预览。默认使用英文，中文版可用 `?lang=zh` 直达，浅色主题使用蓝色，深色主题使用紫色。
+Open the URL printed by Vite. English is the default. Add `?lang=zh` to open Chinese directly. The light theme uses blue accents and the dark theme uses purple.
 
 ## 组件与状态 / Components and state
 
@@ -45,4 +45,4 @@ The build writes the root `index.html` and static assets under `portfolio/`. Com
 
 ## 学习路线图 / Learning map
 
-`site/src/data/technology.js` 定义技术方向及其项目、论文节点。选择节点可以查看说明和原始链接。
+`site/src/data/technology.js` 定义工程与语言、AI 与视觉两个分支，以及节点之间的关联。选择节点可以查看说明和原始链接。

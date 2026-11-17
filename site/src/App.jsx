@@ -8,7 +8,7 @@ import { github, scholar, projects, papers } from './data/portfolio';
 import { additionalProjects, blog } from './data/technology';
 
 function currentLanguage() {
-  return new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'zh';
+  return new URLSearchParams(location.search).get('lang') === 'zh' ? 'zh' : 'en';
 }
 
 export default function App() {
@@ -43,8 +43,8 @@ export default function App() {
 
   function switchLanguage() {
     const url = new URL(location.href);
-    if (english) url.searchParams.delete('lang');
-    else url.searchParams.set('lang', 'en');
+    if (english) url.searchParams.set('lang', 'zh');
+    else url.searchParams.delete('lang');
     history.replaceState(null, '', url);
     setLang(currentLanguage());
   }
@@ -60,7 +60,7 @@ export default function App() {
       <a className="skip" href="#main">{t('跳到正文', 'Skip to content')}</a>
       <header className="top">
         <div className="shell navigation">
-          <a className="brand" href={english ? '/?lang=en' : '/'}>Tensorboy</a>
+          <a className="brand" href={english ? '/' : '/?lang=zh'}>Tensorboy</a>
           <nav className="section-nav" aria-label={t('页面导航', 'Page navigation')}>
             {navigation.map(([href, icon, label]) => (
               <a key={href} className="icon-label" href={href} aria-current={section === href ? 'location' : undefined}>
@@ -103,7 +103,7 @@ export default function App() {
                 <article key={project.href} className="more-project">
                   <p className="stack">{project.tag}</p>
                   <h3><a className="icon-label" href={project.href}>
-                    {Array.isArray(project.title) ? project.title[Number(english)] : project.title}<Icon name="link" />
+                    {Array.isArray(project.projectTitle) ? project.projectTitle[Number(english)] : project.projectTitle}<Icon name="link" />
                   </a></h3>
                   <p>{project.detail[Number(english)]}</p>
                 </article>
