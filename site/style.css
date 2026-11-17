@@ -29,11 +29,13 @@ button { cursor: pointer; color: var(--accent); background: var(--wash); border:
 .skip:focus { top: 1rem; }
 .shell { width: min(1100px, calc(100% - 64px)); margin-inline: auto; }
 .top { border-bottom: 1px solid var(--line); background: var(--paper); }
-.navigation { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.navigation { min-height: 70px; display: flex; align-items: center; gap: 1rem; }
 .brand { font-size: 1.08rem; font-weight: 760; letter-spacing: -.025em; }
-nav, .controls { display: flex; align-items: center; gap: 1.3rem; }
-nav { font-size: .9rem; color: var(--muted); }
-.controls { gap: .5rem; }
+.section-nav, .controls { display: flex; align-items: center; }
+.section-nav { margin-inline-start: auto; justify-content: flex-end; gap: .22rem; font-size: .88rem; color: var(--muted); }
+.section-nav a { padding: .43rem .6rem; border-radius: 7px; white-space: nowrap; }
+.section-nav a:hover, .section-nav a[aria-current="location"] { color: var(--accent); background: var(--wash); text-decoration: none; }
+.controls { gap: .5rem; padding-inline-start: .85rem; border-inline-start: 1px solid var(--line); }
 .layout { display: grid; grid-template-columns: 266px minmax(0, 1fr); gap: clamp(26px, 4vw, 54px); padding-block: 48px 52px; }
 .profile { align-self: start; position: sticky; top: 25px; padding: 20px 0 0; border-top: 3px solid var(--accent); }
 p, h1, h2, h3 { margin: 0; }
@@ -64,7 +66,8 @@ footer { padding-block: 16px 26px; border-top: 1px solid var(--line); font-size:
 @media (max-width: 740px) {
   .shell { width: calc(100% - 36px); }
   .navigation { flex-wrap: wrap; gap: .65rem; padding-block: .7rem; }
-  nav { order: 3; width: 100%; gap: 1rem; }
+  .section-nav { order: 3; width: 100%; flex-wrap: wrap; }
+  .controls { margin-inline-start: auto; border: 0; padding: 0; }
   .layout { grid-template-columns: 1fr; gap: 25px; padding-block: 25px 35px; }
   .profile { display: flow-root; position: static; padding-top: 12px; }
   .profile-links { margin-top: .55rem; }
@@ -94,7 +97,7 @@ footer { padding-block: 16px 26px; border-top: 1px solid var(--line); font-size:
 h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
 .profile-photo { display: inline-block; margin-bottom: .65rem; }
 .profile-photo img { display: block; width: 88px; height: 88px; object-fit: cover; border: 1px solid var(--line); border-radius: 16px; }
-.intro p, .project-body > p:not(.stack), .map-description { text-align: justify; text-align-last: start; }
+.intro p, .project-body > p:not(.stack), .map-description { text-align: justify; text-align-last: start; hyphens: auto; }
 :lang(zh-CN) { text-justify: inter-character; }
 
 .technology-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
@@ -123,7 +126,7 @@ h2.icon-label > .icon { color: var(--accent); width: .92em; height: .92em; }
   .profile-photo img { width: 54px; height: 54px; border-radius: 11px; }
 }
 @media (max-width: 520px) {
-  nav { column-gap: .8rem; row-gap: .35rem; flex-wrap: wrap; }
+  .section-nav a { padding: .35rem .43rem; font-size: .82rem; }
   .track-controls { gap: .35rem; }
   .track-controls button { font-size: .75rem; padding: .32rem .42rem; }
   .map-nodes button { font-size: .7rem; }

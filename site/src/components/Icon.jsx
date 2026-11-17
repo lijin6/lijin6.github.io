@@ -1,6 +1,7 @@
 import React from 'react';
 
 const paths = {
+  person: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8v-2a5 5 0 0 1 5-4h4a5 5 0 0 1 5 4v2',
   network: 'M12 4v6m-6 4v-2h12v2M10 2h4v4h-4zM4 14h4v5H4zM16 14h4v5h-4z',
   code: 'm8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16',
   paper: 'M6 3h9l4 4v14H6zM14 3v5h5M9 12h7m-7 4h7',

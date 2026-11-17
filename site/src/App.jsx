@@ -13,6 +13,7 @@ function currentLanguage() {
 export default function App() {
   const [lang, setLang] = useState(currentLanguage);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
+  const [section, setSection] = useState(() => location.hash || '#about');
   const english = lang === 'en';
   const dark = theme === 'dark';
   const t = (zh, en) => english ? en : zh;
@@ -25,6 +26,19 @@ export default function App() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
+
+  useEffect(() => {
+    const syncSection = () => setSection(location.hash || '#about');
+    addEventListener('hashchange', syncSection);
+    return () => removeEventListener('hashchange', syncSection);
+  }, []);
+
+  const navigation = [
+    ['#about', 'person', t('简介', 'About')],
+    ['#projects', 'code', t('项目', 'Projects')],
+    ['#publications', 'paper', t('论文', 'Publications')],
+    ['#technology', 'network', t('图谱', 'Map')],
+  ];
 
   function switchLanguage() {
     const url = new URL(location.href);
@@ -46,11 +60,12 @@ export default function App() {
       <header className="top">
         <div className="shell navigation">
           <a className="brand" href={english ? '/?lang=en' : '/'}>Tensorboy</a>
-          <nav aria-label={t('页面导航', 'Page navigation')}>
-            <a href="#about">{t('简介', 'About')}</a>
-            <a className="icon-label" href="#projects"><Icon name="code" />{t('项目', 'Projects')}</a>
-            <a className="icon-label" href="#technology"><Icon name="network" />{t("图谱", "Map")}</a>
-            <a className="icon-label" href="#publications"><Icon name="paper" />{t('论文', 'Publications')}</a>
+          <nav className="section-nav" aria-label={t('页面导航', 'Page navigation')}>
+            {navigation.map(([href, icon, label]) => (
+              <a key={href} className="icon-label" href={href} aria-current={section === href ? 'location' : undefined}>
+                <Icon name={icon} />{label}
+              </a>
+            ))}
           </nav>
           <div className="controls">
             <button type="button" className="icon-label" onClick={switchLanguage} lang={english ? 'zh-CN' : 'en'}><Icon name="globe" />{t('English', '中文')}</button>
