@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect x="1" y="1" width="62" height="62" rx="15" fill="#174bb5"/>
-  <path d="M12 20v23h11M27 20v23h10M51 20v16c0 5-3 7-7 7h-3" fill="none" stroke="#fff" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="32" y="37" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700" text-anchor="middle">L-Liu</text>
 </svg>

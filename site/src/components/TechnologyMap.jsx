@@ -7,6 +7,12 @@ const edges = [
   ...tracks.flatMap(track => [['root', track.id], ...track.nodes.map(node => [track.id, node.id])]),
   ...connections,
 ];
+const linkLabels = {
+  paper: ['阅读论文', 'Read paper'],
+  blog: ['技术博客', 'Technical blog'],
+  reference: ['查看波段资料', 'Band reference'],
+};
+const linkLabel = (kind, english) => (linkLabels[kind] ?? ['查看仓库', 'View repository'])[Number(english)];
 const nodeTitle = (node, language) => Array.isArray(node.title) ? node.title[language] : node.title;
 
 export default function TechnologyMap({ english }) {
@@ -85,7 +91,7 @@ export default function TechnologyMap({ english }) {
           <h3>{nodeTitle(node, language)}</h3>
           <p className="map-description">{node.detail[language]}</p>
           {node.href && <a className="text-link icon-label" href={node.href}>
-            {node.kind === 'paper' ? (english ? 'Read paper' : '阅读论文') : node.kind === 'blog' ? (english ? 'Technical blog' : '技术博客') : (english ? 'View repository' : '查看仓库')} <Icon name="link" />
+            {linkLabel(node.kind, english)} <Icon name="link" />
           </a>}
         </div>
       </div>

@@ -30,6 +30,8 @@ export const tracks = [
       { id: 'tensorflow', title: 'TensorFlow', tag: 'TensorFlow · Keras', detail: ['Fashion AI 用 TensorFlow 和 Keras 运行服饰属性识别模型。', 'Fashion AI uses TensorFlow and Keras for clothing attribute recognition.'], href: repo('lijin6/fashion-ai-system') },
       { id: 'cv', title: ['计算机视觉', 'Computer vision'], tag: 'YOLOv12 · ONNX', detail: ['在 HiResDC-YOLO 研究中，结合多尺度特征和切片推理检测无人机图像里的细小裂缝。', 'HiResDC-YOLO combines multi-scale features and tiled inference to detect fine cracks in UAV imagery.'], href: doi('10.1038/s41598-026-52557-w'), kind: 'paper' },
       { id: 'remote', title: ['遥感', 'Remote sensing'], tag: 'ACM EITCE · SSRN', detail: ['做过东寨港红树林变化分析，也参与无人机遥感小尺度火情检测。', 'Worked on mangrove change analysis and small-scale fire detection in UAV imagery.'], href: doi('10.1145/3711129.3711158'), kind: 'paper' },
+      { id: 'land-cover', title: ['地物分类', 'Land cover'], tag: 'Spectral indices · SVM', detail: ['在东寨港红树林研究中，比较利用卫星影像和光谱指数区分红树林与其他地物的方法。', 'The Dongzhai Harbour study compared methods for separating mangroves from other land cover using satellite imagery and spectral indices.'], href: doi('10.1145/3711129.3711158'), kind: 'paper' },
+      { id: 'infrared', title: ['红外波段', 'Infrared bands'], tag: 'NIR · SWIR · TIR', detail: ['近红外常用于表征植被，短波红外可辅助分析水分，热红外用于地表热特征。', 'Near infrared highlights vegetation, shortwave infrared helps characterize moisture, and thermal infrared supports surface-temperature mapping.'], href: 'https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research', kind: 'reference' },
       { id: 'multimodal', title: ['多模态', 'Multimodal'], tag: 'CLIP · Vision-language', detail: ['用 CLIP 训练仓库探索图像与文本表征。', 'Exploring image and text representations through CLIP training experiments.'], href: repo('lijin6/Clip_train') },
       { id: 'fashion', title: 'Fashion AI', tag: 'React · FastAPI · TensorFlow', detail: ['把图片上传、模型推理和服饰属性结果串成完整的交互流程。', 'Connects image uploads, model inference, and clothing attribute results.'], href: repo('lijin6/fashion-ai-system') },
       hyperspectral,
@@ -44,5 +46,5 @@ export const connections = [
   ['python', 'pytorch'], ['python', 'hyperspectral'],
   ['react', 'fashion'], ['fastapi', 'fashion'],
   ['tensorflow', 'fashion'], ['pytorch', 'cv'],
-  ['remote', 'hyperspectral'], ['tensorflow', 'weed'], ['cv', 'weed'],
+  ['remote', 'hyperspectral'], ['remote', 'land-cover'], ['remote', 'infrared'], ['infrared', 'land-cover'], ['tensorflow', 'weed'], ['cv', 'weed'],
 ];
