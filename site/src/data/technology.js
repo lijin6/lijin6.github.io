@@ -34,6 +34,7 @@ export const tracks = [
       { id: 'fashion', title: 'Fashion AI', tag: 'React · FastAPI · TensorFlow', detail: ['把图片上传、模型推理和服饰属性结果串成完整的交互流程。', 'Connects image uploads, model inference, and clothing attribute results.'], href: repo('lijin6/fashion-ai-system') },
       hyperspectral,
       anomalib,
+      { id: 'weed', title: 'WeedDetect', tag: 'Android · CameraX · TensorFlow Lite', detail: ['把 YOLO 杂草识别模型部署到安卓端，支持本地影像分析和实时相机检测。', 'Runs a YOLO weed detection model on Android for local media and live camera input.'], href: repo('lijin6/weeddetectionapp') },
       { id: 'slam', title: 'SLAM', tag: 'Loop closure', detail: ['做过 SLAM 回环优化方向的实践。', 'Past work on loop closure optimization in SLAM.'], href: blog, kind: 'blog' },
     ],
   },
@@ -43,5 +44,5 @@ export const connections = [
   ['python', 'pytorch'], ['python', 'hyperspectral'],
   ['react', 'fashion'], ['fastapi', 'fashion'],
   ['tensorflow', 'fashion'], ['pytorch', 'cv'],
-  ['remote', 'hyperspectral'],
+  ['remote', 'hyperspectral'], ['tensorflow', 'weed'], ['cv', 'weed'],
 ];

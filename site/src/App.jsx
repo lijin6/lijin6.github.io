@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import brandMark from '../../assets/favicon.svg';
 import avatar from '../media/github-avatar.png';
 import Icon from './components/Icon';
 import TechnologyMap from './components/TechnologyMap';
@@ -60,7 +61,7 @@ export default function App() {
       <a className="skip" href="#main">{t('跳到正文', 'Skip to content')}</a>
       <header className="top">
         <div className="shell navigation">
-          <a className="brand" href={english ? '/' : '/?lang=zh'}>Tensorboy</a>
+          <a className="brand" href={english ? '/' : '/?lang=zh'}><img src={brandMark} alt="" width="29" height="29" />Tensorboy</a>
           <nav className="section-nav" aria-label={t('页面导航', 'Page navigation')}>
             {navigation.map(([href, icon, label]) => (
               <a key={href} className="icon-label" href={href} aria-current={section === href ? 'location' : undefined}>
@@ -88,9 +89,9 @@ export default function App() {
             <p className="profile-experience">{t("科研中主要负责实验、代码实现和论文撰写，也有后端开发与技术支持实习经历。", "In research, I run experiments, implement code, and write manuscripts. I have also interned in backend development and technical support.")}</p>
           </section>
           <div className="profile-links">
-            <a href={github}>GitHub ↗</a>
-            <a href={scholar}>Google Scholar ↗</a>
-            <a href={blog}>CSDN ↗</a>
+            <a className="icon-label" href={github}><Icon name="github" />GitHub</a>
+            <a className="icon-label" href={scholar}><Icon name="paper" />Google Scholar</a>
+            <a className="icon-label" href={blog}><Icon name="book" />CSDN</a>
           </div>
         </aside>
         <main id="main">

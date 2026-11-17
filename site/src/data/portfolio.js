@@ -1,3 +1,5 @@
+import weedHome from '../../media/weed-home.jpg';
+import weedInfo from '../../media/weed-info.jpg';
 import architectureImage from '../../media/hires-architecture.png';
 import fashionImage from '../../media/fashion.png';
 import fashionDetails from '../../media/fashion-details.png';
@@ -30,6 +32,18 @@ export const projects = [
     detail: [
       '以 Mosh Hamedani 的 React 课程项目为练习题，从头实现搜索、分类与平台筛选、排序和响应式布局。',
       'A self-directed rebuild of the GameHub project from the React course by Mosh Hamedani, with search, filters, sorting, and responsive layouts.',
+    ],
+  },
+  {
+    name: ['WeedDetect 安卓杂草识别', 'WeedDetect · Android Weed Detection'],
+    repo: 'weeddetectionapp',
+    media: { src: weedHome, alt: ['WeedDetect 安卓应用首页', 'WeedDetect Android home screen'],
+      companion: { src: weedInfo, alt: ['WeedDetect 杂草百科', 'WeedDetect weed guide'] },
+      caption: ['Android 应用界面', 'Android app screens'] },
+    stack: 'Android / CameraX / YOLO / TensorFlow Lite',
+    detail: [
+      '将 YOLO 模型转成 TensorFlow Lite 部署到安卓端，支持拍照、相册和本地视频识别，并使用 CameraX 实现实时相机检测。',
+      'Deployed a YOLO model to Android using TensorFlow Lite. The app supports photo, gallery, and local video inputs, plus live detection with CameraX.',
     ],
   },
   {

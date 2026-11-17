@@ -30,7 +30,7 @@ button { cursor: pointer; color: var(--accent); background: var(--wash); border:
 .shell { width: min(1100px, calc(100% - 64px)); margin-inline: auto; }
 .top { border-bottom: 1px solid var(--line); background: var(--paper); }
 .navigation { min-height: 70px; display: flex; align-items: center; gap: 1rem; }
-.brand { font-size: 1.08rem; font-weight: 760; letter-spacing: -.025em; }
+.brand { display: inline-flex; align-items: center; gap: .5rem; font-size: 1.08rem; font-weight: 760; letter-spacing: -.025em; }
 .section-nav, .controls { display: flex; align-items: center; }
 .section-nav { margin-inline-start: auto; justify-content: flex-end; gap: .22rem; font-size: .88rem; color: var(--muted); }
 .section-nav a { padding: .43rem .6rem; border-radius: 7px; white-space: nowrap; }
@@ -80,8 +80,10 @@ footer { padding-block: 16px 26px; border-top: 1px solid var(--line); font-size:
 .project { display: grid; grid-template-columns: minmax(0, 40%) minmax(0, 1fr); align-items: center; padding: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .project-body { padding: 6px 12px 6px 18px; }
 .project figure { margin: 0; background: var(--wash); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.project figure > a { display: block; }
+.project-media > a { display: block; }
 .project figure img { display: block; width: 100%; height: auto; max-height: 245px; object-fit: contain; }
+.paired-media { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .4rem; padding: .45rem; }
+.paired-media img { border-radius: 5px; }
 .project figcaption { font-size: .72rem; color: var(--muted); padding: .3rem .65rem; }
 @media (max-width: 740px) {
 }
