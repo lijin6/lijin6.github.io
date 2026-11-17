@@ -82,7 +82,9 @@ export default function App() {
           <p className="affiliation">{t('海南师范大学 · 人工智能方向', 'Hainan Normal University · Artificial Intelligence')}</p>
           <p className="research-interests">
             <strong>{t('研究领域', 'Research interests')}</strong>
-            <span>{t('计算机视觉 · 遥感 · 高光谱异常检测', 'Computer vision · Remote sensing · Hyperspectral anomaly detection')}</span>
+            <span>{t('计算机视觉 · 遥感 · 高光谱异常检测 · 红外检测', 'Computer vision · Remote sensing · Hyperspectral anomaly detection · Infrared detection')}</span>
+            <span>{t('深度学习 · 表征学习 · 多模态学习与融合', 'Deep learning · Representation learning · Multimodal learning and fusion')}</span>
+            <span>{t('多模型异构协同', 'Heterogeneous multi-model collaboration')}</span>
           </p>
           <section id="about" className="intro">
             <h1>{t('计算机视觉与应用开发', 'Computer vision & application development')}</h1>
