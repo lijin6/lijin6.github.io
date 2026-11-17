@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tensorboy · 前端开发、AI 应用与计算机视觉研究">
+  <link rel="canonical" href="https://lijin6.github.io/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <title>Tensorboy · 个人主页</title>
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch {}
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>请启用 JavaScript 浏览此主页。 Enable JavaScript to view this portfolio.</noscript>
+  <script type="module" src="/main.jsx"></script>
+</body>
+</html>

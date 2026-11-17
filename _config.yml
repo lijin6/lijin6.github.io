@@ -1,5 +1,4 @@
-title: Li-Jin Liu
-email: lijinliu.ac@gmail.com
+title: Tensorboy
 description: Frontend development, AI applications, and computer vision research.
 url: https://lijin6.github.io
 
@@ -7,3 +6,11 @@ remote_theme: pages-themes/cayman
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# React source and tooling are not part of the published site.
+exclude:
+  - site
+  - scripts
+  - node_modules
+  - package.json
+  - package-lock.json
